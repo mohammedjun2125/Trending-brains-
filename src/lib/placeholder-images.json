@@ -1,3 +1,40 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "hero-image",
+      "description": "A group of diverse women collaborating in a bright, modern workspace.",
+      "imageUrl": "https://images.unsplash.com/photo-1531496635011-06e2870a6722?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHx3b21lbiUyMGNvbGxhYm9yYXRpbmd8ZW58MHx8fHwxNzY1OTg4MzI1fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "women collaborating"
+    },
+    {
+      "id": "program-1",
+      "description": "A person analyzing charts and graphs on a computer screen for digital marketing.",
+      "imageUrl": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxkaWdpdGFsJTIwbWFya2V0aW5nfGVufDB8fHx8MTc2NTk0Mjk1Nnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "digital marketing"
+    },
+    {
+      "id": "program-2",
+      "description": "Code on a dark computer screen, representing full-stack development.",
+      "imageUrl": "https://images.unsplash.com/photo-1608742213509-815b97c30b36?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxjb2RlJTIwc2NyZWVufGVufDB8fHx8MTc2NTk2MTc2NHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "code screen"
+    },
+    {
+      "id": "program-3",
+      "description": "A team meeting with a person leading the discussion, representing leadership.",
+      "imageUrl": "https://images.unsplash.com/photo-1542744095-fcf48d80b0fd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHx0ZWFtJTIwbWVldGluZ3xlbnwwfHx8fDE3NjU4ODc4ODV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "team meeting"
+    },
+    {
+      "id": "community-banner",
+      "description": "A vibrant group of people talking and networking at an event.",
+      "imageUrl": "https://images.unsplash.com/photo-1550177977-ad69e8f3cae0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxwZW9wbGUlMjBuZXR3b3JraW5nfGVufDB8fHx8MTc2NTk0NjY0NHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "people networking"
+    },
+    {
+      "id": "contact-banner",
+      "description": "A close-up of hands typing on a laptop.",
+      "imageUrl": "https://images.unsplash.com/photo-1647154936060-db4513c8084f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHx0eXBpbmclMjBsYXB0b3B8ZW58MHx8fHwxNzY1OTU0NTk2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "typing laptop"
+    }
+  ]
 }
