@@ -93,7 +93,7 @@ export default function Home() {
         {/* Stats Section */}
         <section className="py-12 md:py-24 bg-muted">
           <div className="container px-4 md:px-6">
-            <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
+            <div className="grid grid-cols-2 gap-8 md:grid-cols-4 max-w-5xl mx-auto">
               {stats.map((stat) => (
                 <div key={stat.label} className="text-center">
                   <h3 className="text-4xl font-bold font-headline tracking-tighter sm:text-5xl text-accent">{stat.value}</h3>
@@ -109,11 +109,11 @@ export default function Home() {
             <div className="container px-4 md:px-6">
                 <div className="text-center mb-12">
                     <h2 className="text-3xl font-bold font-headline tracking-tighter sm:text-4xl md:text-5xl">Our Premier Programs</h2>
-                    <p className="max-w-[700px] mx-auto mt-4 text-muted-foreground md:text-xl/relaxed">
+                    <p className="max-w-2xl mx-auto mt-4 text-muted-foreground md:text-xl/relaxed">
                         Designed by industry experts to give you a competitive edge.
                     </p>
                 </div>
-                <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+                <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 max-w-5xl mx-auto">
                     {featuredPrograms.map((program) => (
                         <Card key={program.title} className="flex flex-col transition-transform transform hover:-translate-y-2">
                             <CardHeader className="items-start gap-4 space-y-0">
@@ -125,7 +125,7 @@ export default function Home() {
                                  </div>
                             </CardHeader>
                             <CardContent>
-                                <p>{program.description}</p>
+                                <p className="text-muted-foreground">{program.description}</p>
                             </CardContent>
                             <CardFooter className="mt-auto">
                                 <Button asChild variant="outline" className="w-full">
@@ -136,7 +136,7 @@ export default function Home() {
                     ))}
                 </div>
                  <div className="text-center mt-12">
-                    <Button asChild size="lg" variant="link" className="text-accent">
+                    <Button asChild size="lg" variant="link" className="text-accent text-base">
                         <Link href="/programs">View All Programs <ArrowRight className="ml-2 h-4 w-4" /></Link>
                     </Button>
                 </div>
@@ -148,15 +148,15 @@ export default function Home() {
             <div className="container px-4 md:px-6">
                 <div className="text-center mb-12">
                     <h2 className="text-3xl font-bold font-headline tracking-tighter sm:text-4xl md:text-5xl">From Our Community</h2>
-                    <p className="max-w-[700px] mx-auto mt-4 text-muted-foreground md:text-xl/relaxed">
+                    <p className="max-w-2xl mx-auto mt-4 text-muted-foreground md:text-xl/relaxed">
                         Hear what our successful alumnae have to say.
                     </p>
                 </div>
-                <div className="grid gap-8 md:grid-cols-2">
+                <div className="grid gap-8 md:grid-cols-2 max-w-4xl mx-auto">
                     {testimonials.map((testimonial) => (
                         <Card key={testimonial.name} className="bg-background">
                             <CardContent className="pt-6">
-                                <blockquote className="text-lg italic">"{testimonial.quote}"</blockquote>
+                                <blockquote className="text-lg italic text-foreground">"{testimonial.quote}"</blockquote>
                             </CardContent>
                             <CardFooter>
                                 <div className="flex items-center gap-4">
@@ -179,9 +179,9 @@ export default function Home() {
         {/* CTA Section */}
         <section className="py-12 md:py-24">
             <div className="container px-4 md:px-6">
-                <div className="rounded-lg bg-accent p-8 text-center text-accent-foreground md:p-12">
+                <div className="rounded-lg bg-accent p-8 text-center text-accent-foreground md:p-12 max-w-4xl mx-auto">
                     <h2 className="text-3xl font-bold font-headline tracking-tighter sm:text-4xl">Ready to Start Your Journey?</h2>
-                    <p className="mt-4 max-w-xl mx-auto">
+                    <p className="mt-4 max-w-xl mx-auto text-accent-foreground/90">
                         Your future is waiting. Enroll in a program today and take the first step towards a brighter tomorrow.
                     </p>
                     <div className="mt-8">

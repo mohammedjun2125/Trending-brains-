@@ -81,7 +81,7 @@ export default function ProgramsPage() {
         </p>
       </div>
 
-      <div className="grid gap-8 lg:grid-cols-2">
+      <div className="grid gap-8 lg:grid-cols-2 max-w-5xl mx-auto">
         {programs.map((program) => (
           <Card key={program.title} className="flex flex-col">
             <CardHeader>

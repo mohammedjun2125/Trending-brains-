@@ -13,7 +13,7 @@ export default function AboutPage() {
         </p>
       </div>
 
-      <div className="grid md:grid-cols-2 gap-12 items-center">
+      <div className="grid md:grid-cols-2 gap-12 items-center max-w-5xl mx-auto">
         <div className="space-y-6">
           <h2 className="text-3xl font-bold font-headline">Our Story</h2>
           <p className="text-muted-foreground">

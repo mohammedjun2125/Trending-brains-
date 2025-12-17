@@ -110,10 +110,10 @@ export default function CommunityPage() {
                         </CardHeader>
                         <CardContent>
                             <ul className="space-y-2 text-sm">
-                                <li className="hover:text-accent cursor-pointer">#JobOpenings</li>
-                                <li className="hover:text-accent cursor-pointer">#InterviewPrep</li>
-                                <li className="hover:text-accent cursor-pointer">#ProjectIdeas</li>
-                                <li className="hover:text-accent cursor-pointer">#Freelancing</li>
+                                <li><a href="#" className="text-muted-foreground hover:text-accent">#JobOpenings</a></li>
+                                <li><a href="#" className="text-muted-foreground hover:text-accent">#InterviewPrep</a></li>
+                                <li><a href="#" className="text-muted-foreground hover:text-accent">#ProjectIdeas</a></li>
+                                <li><a href="#" className="text-muted-foreground hover:text-accent">#Freelancing</a></li>
                             </ul>
                         </CardContent>
                     </Card>
