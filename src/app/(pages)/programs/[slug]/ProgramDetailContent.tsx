@@ -3,9 +3,17 @@
 import { Button } from '@/components/ui/button';
 import { CheckCircle } from 'lucide-react';
 import Link from 'next/link';
+import { programs } from '@/lib/programs';
 import type { Program } from '@/lib/programs';
+import { notFound } from 'next/navigation';
 
-export default function ProgramDetailContent({ program }: { program: Program }) {
+export default function ProgramDetailContent({ slug }: { slug: string }) {
+  const program = programs.find((p) => p.slug === slug);
+  
+  if (!program) {
+    notFound();
+  }
+
   const ProgramIcon = program.icon;
 
   return (

@@ -2,7 +2,6 @@ import { notFound } from 'next/navigation';
 import { programs } from '@/lib/programs';
 import ProgramDetailContent from './ProgramDetailContent';
 
-// This function runs at build time on the server.
 export function generateStaticParams() {
   return programs.map(program => ({
     slug: program.slug,
@@ -16,5 +15,5 @@ export default function ProgramDetailPage({ params }: { params: { slug: string }
     notFound();
   }
 
-  return <ProgramDetailContent program={program} />;
+  return <ProgramDetailContent slug={params.slug} />;
 }
