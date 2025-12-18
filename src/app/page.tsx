@@ -9,32 +9,15 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { ArrowRight, BookOpen, BrainCircuit, Users } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import placeholderImages from "@/lib/placeholder-images.json";
+import { programs } from "@/lib/programs";
 
 const stats = [
   { value: "10,000+", label: "Women Trained" },
   { value: "1,500+", label: "Entrepreneurs Launched" },
   { value: "50+", label: "Expert-led Programs" },
   { value: "98%", label: "Placement Rate" },
-];
-
-const featuredPrograms = [
-    {
-        title: "Digital Marketing Pro",
-        description: "Master SEO, SEM, social media, and content marketing to drive business growth.",
-        icon: BrainCircuit,
-    },
-    {
-        title: "Full-Stack Development",
-        description: "Become a versatile developer with skills in both front-end and back-end technologies.",
-        icon: BookOpen,
-    },
-    {
-        title: "Leadership & Management",
-        description: "Develop essential leadership skills to inspire teams and manage projects effectively.",
-        icon: Users,
-    },
 ];
 
 const testimonials = [
@@ -54,6 +37,7 @@ const testimonials = [
 
 export default function Home() {
   const heroImage = placeholderImages.placeholderImages.find(p => p.id === "hero-image");
+  const featuredPrograms = programs.slice(0, 3); // Take first 3 programs to feature
 
   return (
     <div className="flex flex-col min-h-[100dvh]">
@@ -114,12 +98,14 @@ export default function Home() {
                     </p>
                 </div>
                 <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 max-w-5xl mx-auto">
-                    {featuredPrograms.map((program) => (
+                    {featuredPrograms.map((program) => {
+                        const Icon = program.icon;
+                        return (
                         <Card key={program.title} className="flex flex-col transition-transform transform hover:-translate-y-2">
                             <CardHeader className="items-start gap-4 space-y-0">
                                 <div className="flex items-center gap-4">
                                      <div className="bg-accent text-accent-foreground rounded-full p-3">
-                                         <program.icon className="h-6 w-6" />
+                                         <Icon className="h-6 w-6" />
                                      </div>
                                      <CardTitle className="font-headline text-2xl">{program.title}</CardTitle>
                                  </div>
@@ -129,11 +115,11 @@ export default function Home() {
                             </CardContent>
                             <CardFooter className="mt-auto">
                                 <Button asChild variant="outline" className="w-full">
-                                    <Link href="/programs">Learn More <ArrowRight className="ml-2 h-4 w-4" /></Link>
+                                    <Link href={`/programs/${program.slug}`}>Learn More <ArrowRight className="ml-2 h-4 w-4" /></Link>
                                 </Button>
                             </CardFooter>
                         </Card>
-                    ))}
+                    )})}
                 </div>
                  <div className="text-center mt-12">
                     <Button asChild size="lg" variant="link" className="text-accent text-base">
@@ -166,6 +152,7 @@ export default function Home() {
                                     </Avatar>
                                     <div>
                                         <p className="font-semibold">{testimonial.name}</p>
+
                                         <p className="text-sm text-muted-foreground">{testimonial.title}</p>
                                     </div>
                                 </div>
