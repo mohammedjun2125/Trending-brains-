@@ -16,6 +16,10 @@ export default function ProgramDetailContent({ slug }: { slug: string }) {
 
   const ProgramIcon = program.icon;
 
+  const phoneNumber = "1234567890"; // Placeholder phone number
+  const message = `Hello! I'm interested in enrolling in the "${program.title}" program.`;
+  const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+
   return (
     <div className="container max-w-4xl mx-auto py-12 md:py-16">
         <div className="mb-8">
@@ -72,7 +76,11 @@ export default function ProgramDetailContent({ slug }: { slug: string }) {
                         <span className="text-right font-bold text-lg">{program.fee}</span>
                     </div>
                  </div>
-                 <Button size="lg" className="w-full mt-6">Enroll Now</Button>
+                 <Button size="lg" className="w-full mt-6" asChild>
+                   <Link href={whatsappLink} target="_blank">
+                    Enroll Now
+                   </Link>
+                 </Button>
             </div>
             <div className="rounded-lg border bg-card text-card-foreground shadow-sm p-6">
                  <h3 className="text-xl font-bold font-headline mb-4">What You'll Gain</h3>
