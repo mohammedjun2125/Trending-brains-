@@ -1,6 +1,25 @@
 import { BrainCircuit, BookOpen, Users, BarChart } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 
-export const programs = [
+export type Program = {
+  slug: string;
+  title: string;
+  duration: string;
+  fee: string;
+  description: string;
+  longDescription: string;
+  icon: LucideIcon;
+  syllabus: {
+    week: string;
+    topic: string;
+  }[];
+  details: {
+    [key: string]: string;
+  };
+};
+
+
+export const programs: Program[] = [
   {
     slug: "digital-marketing-pro",
     title: "Digital Marketing Pro",
