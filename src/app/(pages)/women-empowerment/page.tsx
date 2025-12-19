@@ -5,11 +5,10 @@ import {
   Card,
   CardContent,
   CardDescription,
-  CardFooter,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { CheckCircle, ArrowRight } from "lucide-react";
+import { CheckCircle } from "lucide-react";
 import placeholderImages from "@/lib/placeholder-images.json";
 import { programs } from "@/lib/programs";
 
@@ -28,8 +27,7 @@ export default function WomenEmpowermentPage() {
   const heroImage = placeholderImages.placeholderImages.find(p => p.id === "hero-image");
   const communityImage = placeholderImages.placeholderImages.find(p => p.id === "community-banner");
   
-  // Assuming the first 3 programs are relevant to women empowerment for display
-  const empowermentPrograms = programs.slice(0, 3);
+  const empowermentProgram = programs.find(p => p.slug === 'women-empowerment-initiative');
 
   return (
     <div className="flex flex-col min-h-[100dvh]">
@@ -69,12 +67,12 @@ export default function WomenEmpowermentPage() {
           <div className="container px-4 md:px-6">
             <div className="grid md:grid-cols-2 gap-12 items-center max-w-5xl mx-auto">
               <div className="space-y-6">
-                <h2 className="text-3xl font-bold font-headline">About the Initiative</h2>
+                <h2 className="text-3xl font-bold font-headline">Our Vision & Mission</h2>
                 <p className="text-muted-foreground">
                   Our vision is a world where every woman has the opportunity to achieve her full potential. We aim to be a leading force in online education, creating a global impact by building a future where female-led businesses and initiatives are at the forefront of every industry.
                 </p>
                 <p className="text-muted-foreground">
-                  Founded with the mission to create a space where women can acquire practical skills, build professional networks, and gain the confidence to pursue their ambitions. We are committed to providing a supportive, collaborative learning environment where every student can thrive.
+                  Our mission is to create a space where women can acquire practical skills, build professional networks, and gain the confidence to pursue their ambitions. We are committed to providing a supportive, collaborative learning environment where every student can thrive.
                 </p>
               </div>
               {communityImage && (
@@ -110,56 +108,46 @@ export default function WomenEmpowermentPage() {
             </div>
           </div>
         </section>
-
-        {/* Women Empowerment Courses */}
-        <section className="py-12 md:py-24">
-            <div className="container px-4 md:px-6">
-                <div className="text-center mb-12">
-                    <h2 className="text-3xl font-bold font-headline tracking-tighter sm:text-4xl md:text-5xl">Our Empowerment Courses</h2>
-                    <p className="max-w-2xl mx-auto mt-4 text-muted-foreground md:text-xl/relaxed">
-                        These programs are tailored to provide practical skills for the modern workplace.
-                    </p>
-                </div>
-                <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
-                    {empowermentPrograms.map((program) => (
-                        <Card key={program.title} className="flex flex-col">
-                           <CardHeader>
-                              <CardTitle className="font-headline text-2xl">{program.title}</CardTitle>
-                              <CardDescription>{program.description}</CardDescription>
-                              <div className="flex gap-4 pt-2 text-sm text-muted-foreground">
-                                  <span>Duration: {program.duration}</span>
-                                  <span>Fee: {program.fee}</span>
-                              </div>
+        
+        {/* Program Details Section */}
+        {empowermentProgram && (
+            <section className="py-12 md:py-24">
+                <div className="container px-4 md:px-6">
+                     <div className="text-center mb-12">
+                        <h2 className="text-3xl font-bold font-headline tracking-tighter sm:text-4xl md:text-5xl">The Empowerment Program</h2>
+                        <p className="max-w-2xl mx-auto mt-4 text-muted-foreground md:text-xl/relaxed">
+                           A closer look at what our initiative offers.
+                        </p>
+                    </div>
+                    <div className="max-w-3xl mx-auto">
+                        <Card>
+                             <CardHeader>
+                                <CardTitle className="font-headline text-2xl">{empowermentProgram.title}</CardTitle>
+                                <CardDescription>{empowermentProgram.longDescription}</CardDescription>
+                                <div className="flex gap-4 pt-2 text-sm text-muted-foreground">
+                                    <span>Duration: {empowermentProgram.duration}</span>
+                                    <span>Fee: {empowermentProgram.fee}</span>
+                                </div>
                             </CardHeader>
-                            <CardContent className="flex-grow space-y-4">
-                               <h4 className="font-semibold">What You'll Learn</h4>
-                                <ul className="space-y-2">
-                                  {program.syllabus.slice(0, 3).map(item => (
+                            <CardContent>
+                               <h4 className="font-semibold mb-4 text-lg">What You'll Learn</h4>
+                                <ul className="space-y-3">
+                                  {empowermentProgram.syllabus.map(item => (
                                     <li key={item.week} className="flex items-start gap-3">
                                       <CheckCircle className="mt-1 h-4 w-4 flex-shrink-0 text-accent" />
-                                      <span className="text-sm text-muted-foreground">{item.topic}</span>
+                                      <div>
+                                        <span className="font-semibold">{item.week}:</span> {item.topic}
+                                      </div>
                                     </li>
                                   ))}
                                 </ul>
                             </CardContent>
-                            <CardFooter>
-                               <Button asChild className="w-full">
-                                    <Link href={`/programs/${program.slug}`}>
-                                        View Details & Enroll <ArrowRight className="ml-2 h-4 w-4" />
-                                    </Link>
-                                </Button>
-                            </CardFooter>
                         </Card>
-                    ))}
+                    </div>
                 </div>
-                <div className="text-center mt-12">
-                    <Button asChild size="lg" variant="outline">
-                        <Link href="/programs">Explore All Academy Programs</Link>
-                    </Button>
-                </div>
-            </div>
-        </section>
-        
+            </section>
+        )}
+
         {/* CTA Section */}
         <section className="py-12 md:py-24 bg-background">
             <div className="container px-4 md:px-6">

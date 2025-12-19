@@ -1,4 +1,4 @@
-import { BrainCircuit, BookOpen, Users, BarChart } from "lucide-react";
+import { BrainCircuit, BookOpen, Users, BarChart, Star } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
 export type Program = {
@@ -20,6 +20,28 @@ export type Program = {
 
 
 export const programs: Program[] = [
+    {
+    slug: "women-empowerment-initiative",
+    title: "Women Empowerment Initiative",
+    duration: "Ongoing",
+    fee: "Custom Pricing",
+    description: "A flagship initiative to train and launch the next generation of female entrepreneurs and leaders.",
+    longDescription: "Our Women Empowerment Initiative is a comprehensive program designed to equip women with the essential skills, confidence, and network to excel in their careers and launch their own successful ventures. This initiative provides mentorship, hands-on training, and access to a supportive community of like-minded individuals.",
+    icon: Star,
+    syllabus: [
+      { week: "Module 1", topic: "Leadership and Confidence Building" },
+      { week: "Module 2", topic: "Business and Financial Literacy" },
+      { week: "Module 3", topic: "Digital Skills for the Modern World" },
+      { week: "Module 4", topic: "Networking and Mentorship" },
+      { week: "Module 5", topic: "Project Development and Launch" },
+    ],
+    details: {
+        "Program Type": "Initiative",
+        "Focus": "Entrepreneurship & Leadership",
+        "Format": "Workshops, Mentorship, Community Support",
+        "Audience": "Aspiring female leaders and entrepreneurs",
+    }
+  },
   {
     slug: "digital-marketing-pro",
     title: "Digital Marketing Pro",

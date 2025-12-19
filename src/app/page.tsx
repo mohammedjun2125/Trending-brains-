@@ -31,6 +31,11 @@ const testimonials = [
 export default function Home() {
   const heroImage = placeholderImages.placeholderImages.find(p => p.id === "hero-image");
 
+  // Exclude the Women Empowerment program from the main featured list on the homepage
+  const featuredPrograms = programs.filter(p => p.slug !== 'women-empowerment-initiative').slice(0, 2);
+  const womenEmpowermentProgram = programs.find(p => p.slug === 'women-empowerment-initiative');
+
+
   return (
     <div className="flex flex-col min-h-[100dvh]">
       <main className="flex-1">
@@ -77,27 +82,29 @@ export default function Home() {
                 </div>
                 <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
                     {/* Women Empowerment Card */}
-                    <Card className="flex flex-col transition-transform transform hover:-translate-y-2 lg:col-span-1">
-                        <CardHeader className="items-start gap-4 space-y-0">
-                             <div className="flex items-center gap-4">
-                                 <div className="bg-accent text-accent-foreground rounded-full p-3">
-                                     <Star className="h-6 w-6" />
-                                 </div>
-                                 <CardTitle className="font-headline text-2xl">Women Empowerment</CardTitle>
-                             </div>
-                        </CardHeader>
-                        <CardContent>
-                            <p className="text-muted-foreground">A flagship initiative to train and launch the next generation of female entrepreneurs and leaders.</p>
-                        </CardContent>
-                        <CardFooter className="mt-auto">
-                            <Button asChild variant="outline" className="w-full">
-                                <Link href="/women-empowerment">Explore Initiative <ArrowRight className="ml-2 h-4 w-4" /></Link>
-                            </Button>
-                        </CardFooter>
-                    </Card>
+                    {womenEmpowermentProgram && (
+                        <Card className="flex flex-col transition-transform transform hover:-translate-y-2 lg:col-span-1">
+                            <CardHeader className="items-start gap-4 space-y-0">
+                                <div className="flex items-center gap-4">
+                                    <div className="bg-accent text-accent-foreground rounded-full p-3">
+                                        <Star className="h-6 w-6" />
+                                    </div>
+                                    <CardTitle className="font-headline text-2xl">{womenEmpowermentProgram.title}</CardTitle>
+                                </div>
+                            </CardHeader>
+                            <CardContent>
+                                <p className="text-muted-foreground">{womenEmpowermentProgram.description}</p>
+                            </CardContent>
+                            <CardFooter className="mt-auto">
+                                <Button asChild variant="outline" className="w-full">
+                                    <Link href="/women-empowerment">Explore Initiative <ArrowRight className="ml-2 h-4 w-4" /></Link>
+                                </Button>
+                            </CardFooter>
+                        </Card>
+                    )}
 
                     {/* Other Program Cards */}
-                    {programs.slice(0, 2).map((program) => {
+                    {featuredPrograms.map((program) => {
                         const Icon = program.icon;
                         return (
                         <Card key={program.title} className="flex flex-col transition-transform transform hover:-translate-y-2">
