@@ -9,16 +9,9 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Star } from "lucide-react";
 import placeholderImages from "@/lib/placeholder-images.json";
 import { programs } from "@/lib/programs";
-
-const stats = [
-  { value: "10,000+", label: "Women Trained" },
-  { value: "1,500+", label: "Entrepreneurs Launched" },
-  { value: "50+", label: "Expert-led Programs" },
-  { value: "98%", label: "Placement Rate" },
-];
 
 const testimonials = [
   {
@@ -36,31 +29,34 @@ const testimonials = [
 ];
 
 export default function Home() {
-  const featuredPrograms = programs.slice(0, 3); // Take first 3 programs to feature
+  const heroImage = placeholderImages.placeholderImages.find(p => p.id === "hero-image");
 
   return (
     <div className="flex flex-col min-h-[100dvh]">
       <main className="flex-1">
         {/* Hero Section */}
         <section className="relative w-full py-24 md:py-32 lg:py-40">
-           <Image
-              src="/my-hero-image.jpg"
-              alt="Hero image for Trending Brains Academy"
+          {heroImage && (
+             <Image
+              src={heroImage.imageUrl}
+              alt={heroImage.description}
               fill
               className="object-cover object-center -z-10 brightness-50"
               priority
+              data-ai-hint={heroImage.imageHint}
             />
+          )}
           <div className="container px-4 md:px-6 text-center text-primary-foreground">
             <div className="max-w-3xl mx-auto">
               <h1 className="text-4xl font-headline font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl">
-                Empowering Women, Building Futures
+                Unlock Your Potential, Transform Your Future
               </h1>
               <p className="mt-4 text-lg md:text-xl">
-                Join Trending Brains Academy to gain the skills, confidence, and network to excel in your career and launch your own ventures.
+                Trending Brains Academy offers expert-led courses in technology, design, and business to help you achieve your career goals.
               </p>
               <div className="mt-8 flex justify-center gap-4">
                 <Button size="lg" asChild>
-                  <Link href="/programs">Explore Programs</Link>
+                  <Link href="/programs">Explore Our Courses</Link>
                 </Button>
                 <Button size="lg" variant="outline" className="bg-transparent border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-black">
                   <Link href="/about">About Us</Link>
@@ -70,21 +66,7 @@ export default function Home() {
           </div>
         </section>
         
-        {/* Stats Section */}
-        <section className="py-12 md:py-24 bg-muted">
-          <div className="container px-4 md:px-6">
-            <div className="grid grid-cols-2 gap-8 md:grid-cols-4 max-w-5xl mx-auto">
-              {stats.map((stat) => (
-                <div key={stat.label} className="text-center">
-                  <h3 className="text-4xl font-bold font-headline tracking-tighter sm:text-5xl text-accent">{stat.value}</h3>
-                  <p className="mt-2 text-sm text-muted-foreground">{stat.label}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Featured Programs Section */}
+        {/* Featured Courses Section */}
         <section className="py-12 md:py-24">
             <div className="container px-4 md:px-6">
                 <div className="text-center mb-12">
@@ -93,8 +75,29 @@ export default function Home() {
                         Designed by industry experts to give you a competitive edge.
                     </p>
                 </div>
-                <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 max-w-5xl mx-auto">
-                    {featuredPrograms.map((program) => {
+                <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
+                    {/* Women Empowerment Card */}
+                    <Card className="flex flex-col transition-transform transform hover:-translate-y-2 lg:col-span-1">
+                        <CardHeader className="items-start gap-4 space-y-0">
+                             <div className="flex items-center gap-4">
+                                 <div className="bg-accent text-accent-foreground rounded-full p-3">
+                                     <Star className="h-6 w-6" />
+                                 </div>
+                                 <CardTitle className="font-headline text-2xl">Women Empowerment</CardTitle>
+                             </div>
+                        </CardHeader>
+                        <CardContent>
+                            <p className="text-muted-foreground">A flagship initiative to train and launch the next generation of female entrepreneurs and leaders.</p>
+                        </CardContent>
+                        <CardFooter className="mt-auto">
+                            <Button asChild variant="outline" className="w-full">
+                                <Link href="/women-empowerment">Explore Initiative <ArrowRight className="ml-2 h-4 w-4" /></Link>
+                            </Button>
+                        </CardFooter>
+                    </Card>
+
+                    {/* Other Program Cards */}
+                    {programs.slice(0, 2).map((program) => {
                         const Icon = program.icon;
                         return (
                         <Card key={program.title} className="flex flex-col transition-transform transform hover:-translate-y-2">
@@ -112,7 +115,6 @@ export default function Home() {
                             <CardFooter className="mt-auto">
                                 <Button asChild variant="outline" className="w-full">
                                     <Link href={`/programs/${program.slug}`}>Learn More <ArrowRight className="ml-2 h-4 w-4" /></Link>
-
                                 </Button>
                             </CardFooter>
                         </Card>
@@ -132,7 +134,7 @@ export default function Home() {
                 <div className="text-center mb-12">
                     <h2 className="text-3xl font-bold font-headline tracking-tighter sm:text-4xl md:text-5xl">From Our Community</h2>
                     <p className="max-w-2xl mx-auto mt-4 text-muted-foreground md:text-xl/relaxed">
-                        Hear what our successful alumnae have to say.
+                        Hear what our successful alumni have to say.
                     </p>
                 </div>
                 <div className="grid gap-8 md:grid-cols-2 max-w-4xl mx-auto">
@@ -176,7 +178,6 @@ export default function Home() {
                 </div>
             </div>
         </section>
-
       </main>
     </div>
   );

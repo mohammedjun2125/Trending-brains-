@@ -12,6 +12,7 @@ import { CustomLogo } from "./CustomLogo";
 
 const navLinks = [
   { href: "/programs", label: "Programs" },
+  { href: "/women-empowerment", label: "Women Empowerment" },
   { href: "/about", label: "About Us"},
   { href: "/contact", label: "Contact Us" },
 ];
