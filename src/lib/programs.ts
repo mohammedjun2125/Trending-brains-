@@ -24,7 +24,7 @@ export const programs: Program[] = [
     slug: "women-empowerment-initiative",
     title: "Women Empowerment Initiative",
     duration: "Ongoing",
-    fee: "Custom Pricing",
+    fee: "$499 (Special Initiative Pricing)",
     description: "A flagship initiative to train and launch the next generation of female entrepreneurs and leaders.",
     longDescription: "Our Women Empowerment Initiative is a comprehensive program designed to equip women with the essential skills, confidence, and network to excel in their careers and launch their own successful ventures. This initiative provides mentorship, hands-on training, and access to a supportive community of like-minded individuals.",
     icon: Star,

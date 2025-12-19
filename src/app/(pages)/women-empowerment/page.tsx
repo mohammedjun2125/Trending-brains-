@@ -5,12 +5,14 @@ import {
   Card,
   CardContent,
   CardDescription,
+  CardFooter,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
 import { CheckCircle } from "lucide-react";
 import placeholderImages from "@/lib/placeholder-images.json";
 import { programs } from "@/lib/programs";
+import { ArrowRight } from "lucide-react";
 
 const stats = [
   { value: "10,000+", label: "Women Trained" },
@@ -28,6 +30,9 @@ export default function WomenEmpowermentPage() {
   const communityImage = placeholderImages.placeholderImages.find(p => p.id === "community-banner");
   
   const empowermentProgram = programs.find(p => p.slug === 'women-empowerment-initiative');
+
+  const programWhatsappLink = empowermentProgram ? `https://wa.me/${phoneNumber}?text=${encodeURIComponent(`Hello! I'm interested in enrolling in the "${empowermentProgram.title}" program.`)}` : whatsappLink;
+
 
   return (
     <div className="flex flex-col min-h-[100dvh]">
@@ -55,7 +60,7 @@ export default function WomenEmpowermentPage() {
               </p>
               <div className="mt-8">
                 <Button size="lg" asChild>
-                  <Link href={whatsappLink} target="_blank">Enroll Now</Link>
+                  <Link href={whatsappLink} target="_blank">Join The Initiative</Link>
                 </Button>
               </div>
             </div>
@@ -142,6 +147,14 @@ export default function WomenEmpowermentPage() {
                                   ))}
                                 </ul>
                             </CardContent>
+                             <CardFooter>
+                                <Button size="lg" className="w-full" asChild>
+                                  <Link href={programWhatsappLink} target="_blank">
+                                    Enroll Now
+                                    <ArrowRight className="ml-2 h-4 w-4" />
+                                  </Link>
+                                </Button>
+                            </CardFooter>
                         </Card>
                     </div>
                 </div>
