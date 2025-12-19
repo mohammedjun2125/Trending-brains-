@@ -9,12 +9,10 @@ export const metadata: Metadata = {
   title: "Trending Brains Academy",
   description: "Empowering women through education and entrepreneurship.",
   icons: {
-    icon: [
-      { url: "/favicon.ico" },
-      { url: "/icon.png", sizes: "512x512", type: "image/png" },
-    ],
+    icon: "/tb-favicon.ico",
   },
 };
+
 
 
 export default function RootLayout({
