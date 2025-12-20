@@ -21,7 +21,7 @@ const stats = [
   { value: "98%", label: "Placement Rate" },
 ];
 
-const phoneNumber = "917702151427";
+const phoneNumber = "919700051427";
 const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent("Hello! I'm interested in the Women Empowerment initiative.")}`;
 
 

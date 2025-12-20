@@ -16,7 +16,7 @@ export default function ProgramDetailContent({ slug }: { slug: string }) {
 
   const ProgramIcon = program.icon;
 
-  const phoneNumber = "917702151427";
+  const phoneNumber = "919700051427";
   const message = `Hello! I'm interested in enrolling in the "${program.title}" program.`;
   const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 

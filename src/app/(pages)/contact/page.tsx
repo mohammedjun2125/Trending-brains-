@@ -3,7 +3,7 @@ import { Mail, Phone } from "lucide-react";
 import Link from "next/link";
 
 export default function ContactPage() {
-    const phoneNumber = "917702151427";
+    const phoneNumber = "919700051427";
     const whatsappLink = `https://wa.me/${phoneNumber}`;
   
   return (
@@ -29,7 +29,7 @@ export default function ContactPage() {
                 </div>
                  <div className="flex items-center gap-4">
                     <Phone className="h-5 w-5 text-accent" />
-                    <span className="text-muted-foreground">+91 77021 51427</span>
+                    <span className="text-muted-foreground">+91 97000 51427</span>
                 </div>
             </div>
              
