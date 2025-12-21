@@ -31,7 +31,7 @@ export default function ProgramsPage() {
   );
 
   return (
-    <div className="container py-12 md:py-16">
+    <div className="container mx-auto py-12 md:py-16">
       <div className="mb-12 text-center">
         <h1 className="text-4xl font-bold font-headline tracking-tighter sm:text-5xl">
           Our Programs

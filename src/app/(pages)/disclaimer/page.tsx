@@ -1,6 +1,6 @@
 export default function DisclaimerPage() {
   return (
-    <div className="container max-w-3xl py-12 md:py-16">
+    <div className="container max-w-3xl mx-auto py-12 md:py-16">
       <h1 className="text-4xl font-bold font-headline tracking-tighter mb-6">Disclaimer</h1>
       <div className="prose prose-lg dark:prose-invert text-muted-foreground space-y-4">
         <p>

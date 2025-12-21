@@ -14,7 +14,7 @@ export default function AboutPage() {
     const aboutImage = placeholderImages.placeholderImages.find(p => p.id === "hero-image");
 
   return (
-    <div className="container py-12 md:py-16">
+    <div className="container mx-auto py-12 md:py-16">
       <div className="text-center mb-12">
         <h1 className="text-4xl font-bold font-headline tracking-tighter sm:text-5xl">About Trending Brains Academy</h1>
         <p className="mx-auto mt-4 max-w-3xl text-muted-foreground md:text-xl">
