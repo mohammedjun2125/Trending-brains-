@@ -1,0 +1,21 @@
+{
+  "name": "Trending Brains Academy",
+  "short_name": "Trending Brains",
+  "description": "Empowering women with expert-led online courses in technology, design, and business.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#F44336",
+  "icons": [
+    {
+      "src": "/logo-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/logo-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ]
+}

@@ -5,7 +5,7 @@ import Image from 'next/image';
 export function CustomLogo() {
   return (
     <Image
-      src="/logo.png" // Assumes your logo is named 'logo.png' in the 'public' folder
+      src="/logo.png"
       alt="Trending Brains Logo"
       width={36}
       height={36}

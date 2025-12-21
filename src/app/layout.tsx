@@ -47,6 +47,9 @@ export const metadata: Metadata = {
   authors: [{ name: "Trending Brains Academy" }],
   creator: "Trending Brains Academy",
   publisher: "Trending Brains Academy",
+  icons: {
+    icon: "/tb-favicon.ico",
+  },
 };
 
 export const viewport: Viewport = {
@@ -73,7 +76,6 @@ export default function RootLayout({
           href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Poppins:wght@600;700&display=swap"
           rel="stylesheet"
         />
-        <link rel="icon" href="/tb-favicon.ico" sizes="any" />
       </head>
       <body className="font-body antialiased">
         <div className="flex min-h-screen flex-col">
