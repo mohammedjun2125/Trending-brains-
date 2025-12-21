@@ -34,46 +34,52 @@ export default function ProgramsPage() {
       </div>
 
       <div className="grid gap-8 lg:grid-cols-2 max-w-5xl mx-auto">
-        {programs.map((program) => (
-          <Card key={program.title} className="flex flex-col">
-            <CardHeader>
-              <CardTitle className="font-headline text-2xl">{program.title}</CardTitle>
-              <CardDescription>{program.description}</CardDescription>
-              <div className="flex gap-4 pt-2 text-sm text-muted-foreground">
-                  <span>Duration: {program.duration}</span>
-                  <span>Fee: {program.fee}</span>
-              </div>
-            </CardHeader>
-            <CardContent className="flex-grow">
-              <h4 className="mb-2 font-semibold">Syllabus Overview</h4>
-              <Accordion type="single" collapsible className="w-full">
-                <AccordionItem value="item-1">
-                  <AccordionTrigger>View Weekly Breakdown</AccordionTrigger>
-                  <AccordionContent>
-                    <ul className="space-y-3 pl-2">
-                      {program.syllabus.map((item) => (
-                        <li key={item.week} className="flex items-start gap-3">
-                          <CheckCircle className="mt-1 h-4 w-4 flex-shrink-0 text-accent" />
-                          <div>
-                            <span className="font-semibold">Weeks {item.week}:</span> {item.topic}
-                          </div>
-                        </li>
-                      ))}
-                    </ul>
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
-            </CardContent>
-            <CardFooter>
-              <Button size="lg" className="w-full" asChild>
-                <Link href={`/programs/${program.slug}`}>
-                  Learn More & Enroll
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
-              </Button>
-            </CardFooter>
-          </Card>
-        ))}
+        {programs.map((program) => {
+          const linkHref = program.slug === 'women-empowerment-initiative'
+            ? '/women-empowerment'
+            : `/programs/${program.slug}`;
+
+          return (
+            <Card key={program.title} className="flex flex-col">
+              <CardHeader>
+                <CardTitle className="font-headline text-2xl">{program.title}</CardTitle>
+                <CardDescription>{program.description}</CardDescription>
+                <div className="flex gap-4 pt-2 text-sm text-muted-foreground">
+                    <span>Duration: {program.duration}</span>
+                    <span>Fee: {program.fee}</span>
+                </div>
+              </CardHeader>
+              <CardContent className="flex-grow">
+                <h4 className="mb-2 font-semibold">Syllabus Overview</h4>
+                <Accordion type="single" collapsible className="w-full">
+                  <AccordionItem value="item-1">
+                    <AccordionTrigger>View Weekly Breakdown</AccordionTrigger>
+                    <AccordionContent>
+                      <ul className="space-y-3 pl-2">
+                        {program.syllabus.map((item) => (
+                          <li key={item.week} className="flex items-start gap-3">
+                            <CheckCircle className="mt-1 h-4 w-4 flex-shrink-0 text-accent" />
+                            <div>
+                              <span className="font-semibold">Weeks {item.week}:</span> {item.topic}
+                            </div>
+                          </li>
+                        ))}
+                      </ul>
+                    </AccordionContent>
+                  </AccordionItem>
+                </Accordion>
+              </CardContent>
+              <CardFooter>
+                <Button size="lg" className="w-full" asChild>
+                  <Link href={linkHref}>
+                    Learn More & Enroll
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </Button>
+              </CardFooter>
+            </Card>
+          );
+        })}
       </div>
     </div>
   );
