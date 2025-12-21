@@ -139,7 +139,7 @@ export default function Home() {
                 <div className="text-center mb-12">
                     <h2 className="text-3xl font-bold font-headline tracking-tighter sm:text-4xl md:text-5xl">From Our Community</h2>
                     <p className="max-w-2xl mx-auto mt-4 text-muted-foreground md:text-xl/relaxed">
-                        Hear what our successful alumni have to say.
+                        Hear what our successful alumni have to say and read our latest insights.
                     </p>
                 </div>
                 <div className="grid gap-8 md:grid-cols-2 max-w-4xl mx-auto">
@@ -163,6 +163,11 @@ export default function Home() {
                             </CardFooter>
                         </Card>
                     ))}
+                </div>
+                <div className="text-center mt-12">
+                    <Button asChild size="lg" variant="link" className="text-accent text-base">
+                        <Link href="/blog">Explore Our Blog <ArrowRight className="ml-2 h-4 w-4" /></Link>
+                    </Button>
                 </div>
             </div>
         </section>
