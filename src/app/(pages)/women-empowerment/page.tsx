@@ -18,8 +18,8 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: "Women Empowerment Initiative",
-  description: "Join the Trending Brains Academy's Entrepreneurs Launch Pad. We provide training, mentorship, and a network to help women launch businesses and excel as leaders.",
-  keywords: ["women empowerment", "female entrepreneurs", "leadership for women", "women in business", "Trending Brains Academy", "entrepreneurs launch pad"],
+  description: "Join the Trending Brains Academy's programs for women. We provide training in skill development, vocational trades, and leadership to help women launch businesses and excel.",
+  keywords: ["women empowerment", "skill development for women", "vocational training", "women in business", "Trending Brains Academy"],
   alternates: {
     canonical: "/women-empowerment",
   },
@@ -36,9 +36,9 @@ export default function WomenEmpowermentPage() {
   const heroImage = placeholderImages.placeholderImages.find(p => p.id === "hero-image");
   const communityImage = placeholderImages.placeholderImages.find(p => p.id === "community-banner");
   
-  const empowermentProgram = programs.find(p => p.slug === 'entrepreneurs-launch-pad');
+  const skillDevProgram = programs.find(p => p.slug === 'women-skill-development');
+  const vocationalProgram = programs.find(p => p.slug === 'vocational-skills-for-women');
 
-  const programWhatsappLink = empowermentProgram ? generateWhatsappLink(`Hello! I'm interested in enrolling in the "${empowermentProgram.title}" program.`) : WHATSAPP_LINK;
   const initiativeWhatsappLink = generateWhatsappLink("Hello! I'm interested in the Women Empowerment initiative.");
 
 
@@ -122,31 +122,31 @@ export default function WomenEmpowermentPage() {
           </div>
         </section>
         
-        {/* Program Details Section */}
-        {empowermentProgram && (
-            <section className="py-12 md:py-24">
-                <div className="container px-4 md:px-6">
-                     <div className="text-center mb-12">
-                        <h2 className="text-3xl font-bold font-headline tracking-tighter sm:text-4xl md:text-5xl">The {empowermentProgram.title}</h2>
-                        <p className="max-w-2xl mx-auto mt-4 text-muted-foreground md:text-xl/relaxed">
-                           A closer look at what our flagship initiative offers.
-                        </p>
-                    </div>
-                    <div className="max-w-3xl mx-auto">
-                        <Card>
-                             <CardHeader>
-                                <CardTitle className="font-headline text-2xl">{empowermentProgram.title}</CardTitle>
-                                <CardDescription>{empowermentProgram.longDescription}</CardDescription>
+        {/* Featured Empowerment Programs Section */}
+        <section className="py-12 md:py-24">
+            <div className="container px-4 md:px-6">
+                 <div className="text-center mb-12">
+                    <h2 className="text-3xl font-bold font-headline tracking-tighter sm:text-4xl md:text-5xl">Our Core Empowerment Programs</h2>
+                    <p className="max-w-2xl mx-auto mt-4 text-muted-foreground md:text-xl/relaxed">
+                       Foundational programs to help women build skills and create opportunities.
+                    </p>
+                </div>
+                <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
+                    {skillDevProgram && (
+                        <Card className="flex flex-col">
+                            <CardHeader>
+                                <CardTitle className="font-headline text-2xl">{skillDevProgram.title}</CardTitle>
+                                <CardDescription>{skillDevProgram.description}</CardDescription>
                                 <div className="flex gap-4 pt-2 text-sm text-muted-foreground">
-                                    <span>Duration: {empowermentProgram.duration}</span>
-                                    <span>Fee: {empowermentProgram.fee}</span>
+                                    <span>Duration: {skillDevProgram.duration}</span>
+                                    <span>Fee: {skillDevProgram.fee}</span>
                                 </div>
                             </CardHeader>
-                            <CardContent>
+                            <CardContent className="flex-grow">
                                <h4 className="font-semibold mb-4 text-lg">What You'll Learn</h4>
                                 <ul className="space-y-3">
-                                  {empowermentProgram.syllabus.map(item => (
-                                    <li key={item.week} className="flex items-start gap-3">
+                                  {skillDevProgram.syllabus.map(item => (
+                                    <li key={item.topic} className="flex items-start gap-3">
                                       <CheckCircle className="mt-1 h-4 w-4 flex-shrink-0 text-accent" />
                                       <div>
                                         <span className="font-semibold">{item.week}:</span> {item.topic}
@@ -157,17 +157,50 @@ export default function WomenEmpowermentPage() {
                             </CardContent>
                              <CardFooter>
                                 <Button size="lg" className="w-full" asChild>
-                                  <Link href={programWhatsappLink} target="_blank">
-                                    Enroll Now
+                                  <Link href="/women-empowerment">
+                                    Learn More
                                     <ArrowRight className="ml-2 h-4 w-4" />
                                   </Link>
                                 </Button>
                             </CardFooter>
                         </Card>
-                    </div>
+                    )}
+                    {vocationalProgram && (
+                        <Card className="flex flex-col">
+                            <CardHeader>
+                                <CardTitle className="font-headline text-2xl">{vocationalProgram.title}</CardTitle>
+                                <CardDescription>{vocationalProgram.description}</CardDescription>
+                                <div className="flex gap-4 pt-2 text-sm text-muted-foreground">
+                                    <span>Duration: {vocationalProgram.duration}</span>
+                                    <span>Fee: {vocationalProgram.fee}</span>
+                                </div>
+                            </CardHeader>
+                            <CardContent className="flex-grow">
+                               <h4 className="font-semibold mb-4 text-lg">Choose Your Track</h4>
+                                <ul className="space-y-3">
+                                  {vocationalProgram.syllabus.map(item => (
+                                    <li key={item.topic} className="flex items-start gap-3">
+                                      <CheckCircle className="mt-1 h-4 w-4 flex-shrink-0 text-accent" />
+                                      <div>
+                                         {item.topic}
+                                      </div>
+                                    </li>
+                                  ))}
+                                </ul>
+                            </CardContent>
+                             <CardFooter>
+                                <Button size="lg" className="w-full" asChild>
+                                  <Link href="/women-empowerment">
+                                     Learn More
+                                    <ArrowRight className="ml-2 h-4 w-4" />
+                                  </Link>
+                                </Button>
+                            </CardFooter>
+                        </Card>
+                    )}
                 </div>
-            </section>
-        )}
+            </div>
+        </section>
 
         {/* CTA Section */}
         <section className="py-12 md:py-24 bg-background">
