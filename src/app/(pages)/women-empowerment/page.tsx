@@ -9,7 +9,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { CheckCircle } from "lucide-react";
+import { Check, CheckCircle, Hand, Target } from "lucide-react";
 import placeholderImages from "@/lib/placeholder-images.json";
 import { programs } from "@/lib/programs";
 import { ArrowRight } from "lucide-react";
@@ -32,9 +32,19 @@ const stats = [
   { value: "98%", label: "Placement Rate" },
 ];
 
+const purposePoints = [
+    "Remove economic barriers for women",
+    "Create income opportunities",
+    "Build women entrepreneurs",
+    "Provide leadership & skill-based development",
+    "Ensure financial literacy",
+    "Support legal & safety awareness",
+    "Build strong women communities and ambassadors",
+];
+
+
 export default function WomenEmpowermentPage() {
   const heroImage = placeholderImages.placeholderImages.find(p => p.id === "hero-image");
-  const communityImage = placeholderImages.placeholderImages.find(p => p.id === "community-banner");
   
   const skillDevProgram = programs.find(p => p.slug === 'women-skill-development');
   const vocationalProgram = programs.find(p => p.slug === 'vocational-skills-for-women');
@@ -75,33 +85,6 @@ export default function WomenEmpowermentPage() {
           </div>
         </section>
 
-        {/* About the Initiative */}
-        <section className="py-12 md:py-24">
-          <div className="container px-4 md:px-6">
-            <div className="grid md:grid-cols-2 gap-12 items-center max-w-5xl mx-auto">
-              <div className="space-y-6">
-                <h2 className="text-3xl font-bold font-headline">Our Vision & Mission</h2>
-                <p className="text-muted-foreground">
-                  Our vision is a world where every woman has the opportunity to achieve her full potential. We aim to be a leading force in online education, creating a global impact by building a future where female-led businesses and initiatives are at the forefront of every industry.
-                </p>
-                <p className="text-muted-foreground">
-                  Our mission is to create a space where women can acquire practical skills, build professional networks, and gain the confidence to pursue their ambitions. We are committed to providing a supportive, collaborative learning environment where every student can thrive.
-                </p>
-              </div>
-              {communityImage && (
-                <Image
-                  src={communityImage.imageUrl}
-                  alt={communityImage.description}
-                  width={600}
-                  height={400}
-                  className="rounded-lg object-cover"
-                  data-ai-hint={communityImage.imageHint}
-                />
-              )}
-            </div>
-          </div>
-        </section>
-        
         {/* Stats Section */}
         <section className="py-12 md:py-24 bg-muted">
           <div className="container px-4 md:px-6">
@@ -139,7 +122,7 @@ export default function WomenEmpowermentPage() {
                                 <CardDescription>{skillDevProgram.description}</CardDescription>
                                 <div className="flex gap-4 pt-2 text-sm">
                                     <span className="text-muted-foreground">Duration: {skillDevProgram.duration}</span>
-                                    <span className="font-bold text-foreground">Fee: {skillDevProgram.fee}</span>
+                                    <span className="font-bold text-foreground">{skillDevProgram.fee}</span>
                                 </div>
                             </CardHeader>
                             <CardContent className="flex-grow">
@@ -172,11 +155,12 @@ export default function WomenEmpowermentPage() {
                                 <CardDescription>{vocationalProgram.description}</CardDescription>
                                 <div className="flex gap-4 pt-2 text-sm">
                                     <span className="text-muted-foreground">Duration: {vocationalProgram.duration}</span>
-                                    <span className="font-bold text-foreground">Fee: {vocationalProgram.fee}</span>
+                                    <span className="font-bold text-foreground">{vocationalProgram.fee}</span>
                                 </div>
                             </CardHeader>
                             <CardContent className="flex-grow">
                                <h4 className="font-semibold mb-4 text-lg">Choose Your Track</h4>
+                                <p className="text-sm text-muted-foreground mb-4">Note: You must choose one stream to specialize in.</p>
                                 <ul className="space-y-3">
                                   {vocationalProgram.syllabus.map(item => (
                                     <li key={item.topic} className="flex items-start gap-3">
@@ -202,8 +186,49 @@ export default function WomenEmpowermentPage() {
             </div>
         </section>
 
-        {/* CTA Section */}
+        {/* Vision, Mission, Purpose Section */}
         <section className="py-12 md:py-24 bg-background">
+          <div className="container px-4 md:px-6">
+            <div className="grid md:grid-cols-2 gap-12 items-start max-w-6xl mx-auto">
+              <div className="space-y-8">
+                 <div>
+                    <h2 className="text-3xl font-bold font-headline mb-4 flex items-center gap-3"><Target className="h-8 w-8 text-accent"/>Our Vision</h2>
+                    <p className="text-muted-foreground italic">
+                      “To build a generation of financially independent, confident, and highly skilled women who emerge as empowered leaders and future-ready entrepreneurs.”
+                    </p>
+                </div>
+                 <div>
+                    <h2 className="text-3xl font-bold font-headline mb-4 flex items-center gap-3"><Hand className="h-8 w-8 text-accent"/>Our Mission</h2>
+                     <p className="text-muted-foreground">
+                       Our mission is to cultivate a transformative ecosystem where women are equipped not just with skills, but with a strong sense of purpose, confidence, and financial independence. We are committed to shaping a generation of dynamic women who can break barriers, challenge norms, and lead with innovation and resilience.
+                    </p>
+                    <p className="text-muted-foreground mt-4">
+                       By providing structured training, mentorship, entrepreneurial exposure, and leadership development opportunities, we empower women to realise their fullest potential. Our approach ensures they gain the competencies, mindset, and resources required to thrive in high-growth careers, build successful enterprises, and contribute meaningfully to the socio-economic progress of their communities.
+                    </p>
+                     <p className="text-muted-foreground mt-4">
+                       We envision a future where every woman has the opportunity, capability, and confidence to create her own path—whether as a leader in the corporate world or as an entrepreneur driving change. Through continuous learning, empowerment, and purpose-driven development, we aspire to nurture women who inspire others, uplift communities, and reshape the future with their leadership.
+                    </p>
+                </div>
+              </div>
+               <div>
+                  <h2 className="text-3xl font-bold font-headline mb-6">Our Purpose</h2>
+                  <div className="space-y-4">
+                     {purposePoints.map((point) => (
+                        <div key={point} className="flex items-start gap-3">
+                           <div className="bg-accent rounded-full p-1 mt-1">
+                               <Check className="h-4 w-4 text-accent-foreground" />
+                           </div>
+                           <p className="text-muted-foreground flex-1">{point}</p>
+                        </div>
+                     ))}
+                  </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* CTA Section */}
+        <section className="py-12 md:py-24 bg-muted">
             <div className="container px-4 md:px-6">
                 <div className="rounded-lg bg-accent p-8 text-center text-accent-foreground md:p-12 max-w-4xl mx-auto">
                     <h2 className="text-3xl font-bold font-headline tracking-tighter sm:text-4xl">Join a Community of Changemakers</h2>
