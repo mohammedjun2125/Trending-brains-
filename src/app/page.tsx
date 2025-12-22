@@ -29,8 +29,8 @@ const testimonials = [
 
 export default function Home() {
   // Exclude the Women Empowerment program from the main featured list on the homepage
-  const featuredPrograms = programs.filter(p => p.slug !== 'women-empowerment-initiative').slice(0, 2);
-  const womenEmpowermentProgram = programs.find(p => p.slug === 'women-empowerment-initiative');
+  const featuredPrograms = programs.filter(p => p.slug !== 'entrepreneurs-launch-pad').slice(0, 2);
+  const womenEmpowermentProgram = programs.find(p => p.slug === 'entrepreneurs-launch-pad');
 
 
   return (

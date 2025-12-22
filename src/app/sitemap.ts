@@ -25,7 +25,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   // Program pages
   const programRoutes = programs
-    .filter(program => program.slug !== 'women-empowerment-initiative')
+    .filter(program => program.slug !== 'entrepreneurs-launch-pad')
     .map(program => ({
       url: `${siteUrl}/programs/${program.slug}`,
       lastModified: new Date().toISOString(),

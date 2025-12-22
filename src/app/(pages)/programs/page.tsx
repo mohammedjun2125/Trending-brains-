@@ -39,6 +39,9 @@ export default function ProgramsPage() {
         <p className="mx-auto mt-4 max-w-2xl text-muted-foreground md:text-xl">
           Invest in yourself. Our programs are designed to provide practical skills for the modern workplace, including digital marketing, full-stack development, and leadership.
         </p>
+         <p className="mx-auto mt-4 max-w-2xl text-accent font-semibold md:text-lg">
+          All programs include FREE training on Resume Building & Career Counselling!
+        </p>
       </div>
 
       <div className="max-w-xl mx-auto mb-10">
@@ -57,7 +60,7 @@ export default function ProgramsPage() {
       <div className="grid gap-8 lg:grid-cols-2 max-w-5xl mx-auto">
         {filteredPrograms.length > 0 ? (
           filteredPrograms.map((program) => {
-            const linkHref = program.slug === 'women-empowerment-initiative'
+            const linkHref = program.slug === 'entrepreneurs-launch-pad'
               ? '/women-empowerment'
               : `/programs/${program.slug}`;
 
@@ -79,10 +82,10 @@ export default function ProgramsPage() {
                       <AccordionContent>
                         <ul className="space-y-3 pl-2">
                           {program.syllabus.map((item) => (
-                            <li key={item.week} className="flex items-start gap-3">
+                            <li key={item.topic} className="flex items-start gap-3">
                               <CheckCircle className="mt-1 h-4 w-4 flex-shrink-0 text-accent" />
                               <div>
-                                <span className="font-semibold">Weeks {item.week}:</span> {item.topic}
+                                <span className="font-semibold">{item.week}:</span> {item.topic}
                               </div>
                             </li>
                           ))}

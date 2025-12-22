@@ -1,4 +1,4 @@
-import { BrainCircuit, BookOpen, Users, BarChart, Star } from "lucide-react";
+import { BrainCircuit, BookOpen, Users, BarChart, Star, Palette, CookingPot, Hand, Stethoscope, Briefcase } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
 export type Program = {
@@ -10,7 +10,7 @@ export type Program = {
   longDescription: string;
   icon: LucideIcon;
   syllabus: {
-    week: string;
+    week: string; // Can be "Module 1", "Week 1", or a topic name
     topic: string;
   }[];
   details: {
@@ -21,112 +21,109 @@ export type Program = {
 
 export const programs: Program[] = [
     {
-    slug: "women-empowerment-initiative",
-    title: "Women Empowerment Initiative",
-    duration: "Ongoing",
-    fee: "$499 (Special Initiative Pricing)",
-    description: "A flagship initiative to train and launch the next generation of female entrepreneurs and leaders.",
-    longDescription: "Our Women Empowerment Initiative is a comprehensive program designed to equip women with the essential skills, confidence, and network to excel in their careers and launch their own successful ventures. This initiative provides mentorship, hands-on training, and access to a supportive community of like-minded individuals.",
+    slug: "entrepreneurs-launch-pad",
+    title: "Entrepreneurs Launch Pad",
+    duration: "30 Days",
+    fee: "₹3999",
+    description: "Your 30-day journey from business idea to successful launch, covering planning, marketing, and funding.",
+    longDescription: "The Entrepreneurs Launch Pad is an intensive 30-day program designed to guide aspiring entrepreneurs through every critical stage of starting a business. From understanding the fundamentals to building your brand, mastering marketing, and securing funding, this course provides the roadmap you need to launch with confidence.",
     icon: Star,
     syllabus: [
-      { week: "Module 1", topic: "Leadership and Confidence Building" },
-      { week: "Module 2", topic: "Business and Financial Literacy" },
-      { week: "Module 3", topic: "Digital Skills for the Modern World" },
-      { week: "Module 4", topic: "Networking and Mentorship" },
-      { week: "Module 5", topic: "Project Development and Launch" },
+      { week: "Week 1", topic: "Understand Business: Ideation and Market Research" },
+      { week: "Week 2", topic: "Build Your Business: Planning, Legal, and Operations" },
+      { week: "Week 3", topic: "Marketing: Branding, Digital Presence, and Customer Acquisition" },
+      { week: "Week 4", topic: "Funding & Launch: Financials, Pitching, and Go-to-Market Strategy" },
     ],
     details: {
         "Program Type": "Initiative",
-        "Focus": "Entrepreneurship & Leadership",
-        "Format": "Workshops, Mentorship, Community Support",
-        "Audience": "Aspiring female leaders and entrepreneurs",
+        "Focus": "Entrepreneurship & Business Launch",
+        "Format": "Workshops & Mentorship",
+        "Audience": "Aspiring entrepreneurs",
     }
   },
   {
-    slug: "digital-marketing-pro",
-    title: "Digital Marketing Pro",
-    duration: "12 Weeks",
-    fee: "$1,200",
-    description: "Master SEO, SEM, social media, and content marketing. This comprehensive course prepares you for a high-demand career in the digital world.",
-    longDescription: "Dive deep into the world of digital marketing and learn how to create and execute effective strategies that drive growth. This program covers everything from search engine optimization (SEO) and paid advertising to social media engagement and data analytics. You'll work on real-world projects to build a strong portfolio.",
+    slug: "women-skill-development",
+    title: "Women Skill Development",
+    duration: "2 Trainings",
+    fee: "₹2999",
+    description: "A foundational program for women to build essential digital and communication skills for personal and professional growth.",
+    longDescription: "This program focuses on empowering women with fundamental skills for the modern world. It covers digital literacy to navigate the online landscape and enhances communication and English language abilities for better personal and professional interactions.",
     icon: BrainCircuit,
     syllabus: [
-      { week: "1-2", topic: "Introduction to Digital Marketing & SEO Fundamentals" },
-      { week: "3-4", topic: "Content Marketing & Social Media Strategy" },
-      { week: "5-6", topic: "Paid Advertising (Google Ads & Facebook Ads)" },
-      { week: "7-8", topic: "Analytics and Data Interpretation" },
-      { week: "9-10", topic: "Email Marketing & Automation" },
-      { week: "11-12", topic: "Final Project & Portfolio Building" },
+      { week: "Module 1", topic: "Digital Literacy: Computer basics, internet, and online safety." },
+      { week: "Module 2", topic: "Communication & English: Effective speaking, writing, and professional etiquette." },
+    ],
+    details: {
+        "Course Level": "Beginner",
+        "Prerequisites": "None",
+        "Format": "Online, instructor-led",
+        "Time Commitment": "Flexible",
+    }
+  },
+  {
+    slug: "vocational-skills-for-women",
+    title: "Vocational Skills for Women",
+    duration: "Varies by Skill",
+    fee: "₹4499",
+    description: "Choose a practical skill to master, from tailoring and fashion to cooking and baking, and turn your passion into a profession.",
+    longDescription: "Our Vocational Skills program allows women to choose a specific hands-on skill to develop. Each track provides expert training to help you master your craft, whether it's for personal enrichment or to start your own small business. Choose one stream to specialize in.",
+    icon: Palette,
+    syllabus: [
+        { week: "Track 1", topic: "Tailoring & Fashion Design" },
+        { week: "Track 2", topic: "Beauty & Makeup Artistry" },
+        { week: "Track 3", topic: "Cooking & Baking Arts" },
+        { week: "Track 4", topic: "Professional Mehendi Design" },
     ],
     details: {
         "Course Level": "Beginner to Intermediate",
         "Prerequisites": "None",
-        "Format": "Online, self-paced with weekly deadlines",
-        "Time Commitment": "8-10 hours/week",
+        "Format": "Hands-on, workshop-based",
+        "Audience": "Anyone looking to learn a practical trade",
     }
   },
   {
-    slug: "full-stack-development",
-    title: "Full-Stack Development",
-    duration: "16 Weeks",
-    fee: "$2,500",
-    description: "Become a job-ready developer. Learn front-end with React and back-end with Node.js to build complete web applications.",
-    longDescription: "This immersive program is designed to take you from beginner to job-ready full-stack developer. You will learn to build responsive and dynamic web applications using modern technologies like React for the front-end and Node.js for the back-end, along with essential database knowledge.",
-    icon: BookOpen,
-    syllabus: [
-      { week: "1-4", topic: "HTML, CSS, and Advanced JavaScript" },
-      { week: "5-8", topic: "React.js and State Management (Redux/Zustand)" },
-      { week: "9-12", topic: "Node.js, Express, and RESTful APIs" },
-      { week: "13-16", topic: "Database Integration (SQL & NoSQL) and Deployment" },
-    ],
-    details: {
-        "Course Level": "Beginner",
-        "Prerequisites": "Basic computer literacy",
-        "Format": "Online, instructor-led sessions & hands-on projects",
-        "Time Commitment": "15-20 hours/week",
-    }
-  },
-  {
-    slug: "leadership-management",
-    title: "Leadership & Management",
-    duration: "8 Weeks",
-    fee: "$950",
-    description: "Cultivate essential leadership qualities. Learn to manage teams, drive projects, and communicate effectively to inspire change.",
-    longDescription: "Step into a leadership role with confidence. This program focuses on the practical skills needed to manage teams, communicate effectively, and lead projects successfully. You'll explore different leadership styles and learn how to apply them in various business scenarios.",
+    slug: "leadership-personality-development",
+    title: "Leadership & Personality Development",
+    duration: "20 Days",
+    fee: "₹2999",
+    description: "Cultivate a powerful personality and develop the essential skills to lead with confidence and influence.",
+    longDescription: "This transformative 20-day program focuses on holistic personal growth. You will enhance your personality, build unshakeable confidence, and master the key traits of effective leadership, from decision-making and time management to grooming and negotiation.",
     icon: Users,
     syllabus: [
-        { week: "1-2", topic: "Foundations of Modern Leadership & Emotional Intelligence" },
-        { week: "3-4", topic: "Effective Communication and Conflict Resolution Strategies" },
-        { week: "5-6", topic: "Team Motivation, Delegation, and Performance Management" },
-        { week: "7-8", topic: "Strategic Planning, Change Management, and Final Case Study" },
+        { week: "Core Area 1", topic: "Personality Development & Confidence Building" },
+        { week: "Core Area 2", topic: "Professional Grooming & Etiquette" },
+        { week: "Core Area 3", topic: "Negotiation & Decision-Making Skills" },
+        { week: "Core Area 4", topic: "Time Management & Productivity" },
+        { week: "Core Area 5", topic: "Developing a Leadership Mindset" },
     ],
     details: {
-        "Course Level": "Intermediate",
-        "Prerequisites": "2+ years of professional experience recommended",
-        "Format": "Online, live virtual classrooms",
-        "Time Commitment": "6-8 hours/week",
+        "Course Level": "All Levels",
+        "Prerequisites": "A desire for self-improvement",
+        "Format": "Online, interactive sessions",
+        "Time Commitment": "4-6 hours/week",
     }
   },
   {
-    slug: "ux-ui-design-fundamentals",
-    title: "UX/UI Design Fundamentals",
-    duration: "10 Weeks",
-    fee: "$1,500",
-    description: "Learn to design intuitive and beautiful user interfaces. This course covers user research, wireframing, prototyping, and visual design principles.",
-    longDescription: "Create user-centered designs that are both functional and beautiful. This course covers the entire UX/UI design process, from conducting user research and creating personas to building interactive prototypes and applying visual design principles. You'll finish with a portfolio-ready project.",
+    slug: "marketing-influence-ai",
+    title: "Marketing & Influence in the Age of AI",
+    duration: "45 Days",
+    fee: "₹6999",
+    description: "Master modern marketing by leveraging AI. This course covers everything from SEO and social media to paid ads and analytics.",
+    longDescription: "Stay ahead in the marketing world with this comprehensive 45-day program. You'll learn the foundations of digital marketing and discover how to use cutting-edge AI tools to enhance your strategy, create content, automate campaigns, and analyze results. A bonus training on resume building and career counselling is included.",
     icon: BarChart,
     syllabus: [
-        { week: "1-2", topic: "Introduction to UX/UI and Design Thinking" },
-        { week: "3-4", topic: "User Research and Persona Creation" },
-        { week: "5-6", topic: "Wireframing, Prototyping, and User Flows with Figma" },
-        { week: "7-8", topic: "Visual Design, Typography, and Color Theory" },
-        { week: "9-10", topic: "Usability Testing, Handoff, and Final Project Presentation" },
+        { week: "Week 1", topic: "Digital Marketing Foundations + AI Essentials" },
+        { week: "Week 2", topic: "Website & Landing Page Basics" },
+        { week: "Week 3", topic: "SEO Fundamentals + AI for SEO" },
+        { week: "Week 4", topic: "Social Media Marketing + AI Content Creation" },
+        { week: "Week 5", topic: "Paid Ads (Meta + Google) + Automation" },
+        { week: "Week 6", topic: "Analytics, Business Strategy & Career/Freelance Setup" },
     ],
      details: {
-        "Course Level": "Beginner",
+        "Course Level": "Beginner to Intermediate",
         "Prerequisites": "None",
+        "Bonus": "Free Resume Building & Career Counselling",
         "Format": "Online, project-based learning",
-        "Time Commitment": "10-12 hours/week",
     }
   },
 ];

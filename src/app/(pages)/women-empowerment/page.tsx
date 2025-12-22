@@ -18,8 +18,8 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: "Women Empowerment Initiative",
-  description: "Join the Trending Brains Academy's Women Empowerment Initiative. We provide training, mentorship, and a network to help women launch businesses and excel as leaders.",
-  keywords: ["women empowerment", "female entrepreneurs", "leadership for women", "women in business", "Trending Brains Academy"],
+  description: "Join the Trending Brains Academy's Entrepreneurs Launch Pad. We provide training, mentorship, and a network to help women launch businesses and excel as leaders.",
+  keywords: ["women empowerment", "female entrepreneurs", "leadership for women", "women in business", "Trending Brains Academy", "entrepreneurs launch pad"],
   alternates: {
     canonical: "/women-empowerment",
   },
@@ -36,7 +36,7 @@ export default function WomenEmpowermentPage() {
   const heroImage = placeholderImages.placeholderImages.find(p => p.id === "hero-image");
   const communityImage = placeholderImages.placeholderImages.find(p => p.id === "community-banner");
   
-  const empowermentProgram = programs.find(p => p.slug === 'women-empowerment-initiative');
+  const empowermentProgram = programs.find(p => p.slug === 'entrepreneurs-launch-pad');
 
   const programWhatsappLink = empowermentProgram ? generateWhatsappLink(`Hello! I'm interested in enrolling in the "${empowermentProgram.title}" program.`) : WHATSAPP_LINK;
   const initiativeWhatsappLink = generateWhatsappLink("Hello! I'm interested in the Women Empowerment initiative.");
@@ -127,9 +127,9 @@ export default function WomenEmpowermentPage() {
             <section className="py-12 md:py-24">
                 <div className="container px-4 md:px-6">
                      <div className="text-center mb-12">
-                        <h2 className="text-3xl font-bold font-headline tracking-tighter sm:text-4xl md:text-5xl">The Empowerment Program</h2>
+                        <h2 className="text-3xl font-bold font-headline tracking-tighter sm:text-4xl md:text-5xl">The {empowermentProgram.title}</h2>
                         <p className="max-w-2xl mx-auto mt-4 text-muted-foreground md:text-xl/relaxed">
-                           A closer look at what our initiative offers.
+                           A closer look at what our flagship initiative offers.
                         </p>
                     </div>
                     <div className="max-w-3xl mx-auto">
