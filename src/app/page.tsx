@@ -1,6 +1,9 @@
+
+"use client";
+
+import { useState, useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import Image from "next/image";
 import {
   Card,
   CardContent,
@@ -27,11 +30,31 @@ const testimonials = [
   },
 ];
 
+// IMPORTANT: Add your video files to the `public` folder.
+const videoPlaylist = [
+  "/hero-video.mp4",
+  // Add more videos here, e.g., "/hero-video-2.mp4", "/hero-video-3.mp4"
+];
+
 export default function Home() {
+  const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
   // Exclude the Women Empowerment program from the main featured list on the homepage
   const featuredPrograms = programs.filter(p => p.slug !== 'entrepreneurs-launch-pad').slice(0, 2);
   const womenEmpowermentProgram = programs.find(p => p.slug === 'entrepreneurs-launch-pad');
 
+  const handleVideoEnd = () => {
+    setCurrentVideoIndex((prevIndex) => (prevIndex + 1) % videoPlaylist.length);
+  };
+
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.play().catch(error => {
+        console.error("Video autoplay was prevented:", error);
+      });
+    }
+  }, [currentVideoIndex]);
 
   return (
     <div className="flex flex-col min-h-[100dvh]">
@@ -39,13 +62,15 @@ export default function Home() {
         {/* Hero Section */}
         <section className="relative w-full h-[60vh] md:h-[70vh] lg:h-[80vh] overflow-hidden flex items-center justify-center">
            <video
+            ref={videoRef}
+            key={currentVideoIndex}
             autoPlay
-            loop
             muted
             playsInline
+            onEnded={handleVideoEnd}
             className="absolute top-0 left-0 w-full h-full object-cover -z-10 brightness-50"
             poster="/my-hero-image.jpg"
-            src="/hero-video.mp4"
+            src={videoPlaylist[currentVideoIndex]}
           >
             Your browser does not support the video tag.
           </video>
