@@ -44,7 +44,7 @@ export const programs: Program[] = [
   {
     slug: "women-skill-development",
     title: "Women Skill Development",
-    duration: "2 Trainings",
+    duration: "20 Days",
     fee: "₹2999",
     description: "A foundational program for women to build essential digital and communication skills for personal and professional growth.",
     longDescription: "This program focuses on empowering women with fundamental skills for the modern world. It covers digital literacy to navigate the online landscape and enhances communication and English language abilities for better personal and professional interactions.",
