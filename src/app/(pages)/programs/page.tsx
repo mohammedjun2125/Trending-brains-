@@ -39,9 +39,6 @@ export default function ProgramsPage() {
         <p className="mx-auto mt-4 max-w-2xl text-muted-foreground md:text-xl">
           Invest in yourself. Our programs are designed to provide practical skills for the modern workplace, including digital marketing, full-stack development, and leadership.
         </p>
-         <p className="mx-auto mt-4 max-w-2xl text-accent font-semibold md:text-lg">
-          All programs include FREE training on Resume Building & Career Counselling!
-        </p>
       </div>
 
       <div className="max-w-xl mx-auto mb-10">
@@ -71,7 +68,7 @@ export default function ProgramsPage() {
                   <CardDescription>{program.description}</CardDescription>
                   <div className="flex flex-col sm:flex-row gap-4 pt-2 text-sm">
                       <span className="text-muted-foreground">Duration: {program.duration}</span>
-                      <span className="font-bold text-foreground">Fee: {program.fee}</span>
+                      <span className="font-bold text-foreground text-base">{program.fee}</span>
                   </div>
                 </CardHeader>
                 <CardContent className="flex-grow">
