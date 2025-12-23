@@ -9,6 +9,8 @@ export type Program = {
   description: string;
   longDescription: string;
   icon: LucideIcon;
+  image: string;
+  imageHint: string;
   syllabus: {
     week: string; // Can be "Module 1", "Week 1", or a topic name
     topic: string;
@@ -28,6 +30,8 @@ export const programs: Program[] = [
     description: "Your 30-day journey from business idea to successful launch, covering planning, marketing, and funding.",
     longDescription: "The Entrepreneurs Launch Pad is an intensive 30-day program designed to guide aspiring entrepreneurs through every critical stage of starting a business. From understanding the fundamentals to building your brand, mastering marketing, and securing funding, this course provides the roadmap you need to launch with confidence.",
     icon: Star,
+    image: "/program-entrepreneur.jpg",
+    imageHint: "entrepreneur planning",
     syllabus: [
       { week: "Week 1", topic: "Understand Business: Ideation and Market Research" },
       { week: "Week 2", topic: "Build Your Business: Planning, Legal, and Operations" },
@@ -49,6 +53,8 @@ export const programs: Program[] = [
     description: "A foundational program for women to build essential digital and communication skills for personal and professional growth.",
     longDescription: "This program focuses on empowering women with fundamental skills for the modern world. It covers digital literacy to navigate the online landscape and enhances communication and English language abilities for better personal and professional interactions.",
     icon: BrainCircuit,
+    image: "/program-women-skill.jpg",
+    imageHint: "women learning",
     syllabus: [
       { week: "Module 1", topic: "Digital Literacy: Computer basics, internet, and online safety." },
       { week: "Module 2", topic: "Communication & English: Effective speaking, writing, and professional etiquette." },
@@ -68,6 +74,8 @@ export const programs: Program[] = [
     description: "Choose a practical skill to master, from tailoring and fashion to cooking and baking, and turn your passion into a profession.",
     longDescription: "Our Vocational Skills program allows women to choose a specific hands-on skill to develop. Each track provides expert training to help you master your craft, whether it's for personal enrichment or to start your own small business. Please note: You must choose one stream to specialize in.",
     icon: Palette,
+    image: "/program-vocational.jpg",
+    imageHint: "vocational skills",
     syllabus: [
         { week: "Track 1", topic: "Tailoring & Fashion Design" },
         { week: "Track 2", topic: "Beauty & Makeup Artistry" },
@@ -89,6 +97,8 @@ export const programs: Program[] = [
     description: "Cultivate a powerful personality and develop the essential skills to lead with confidence and influence.",
     longDescription: "This transformative 20-day program focuses on holistic personal growth. You will enhance your personality, build unshakeable confidence, and master the key traits of effective leadership, from decision-making and time management to grooming and negotiation.",
     icon: Users,
+    image: "/program-leadership.jpg",
+    imageHint: "leadership development",
     syllabus: [
         { week: "Core Area 1", topic: "Personality Development & Confidence Building" },
         { week: "Core Area 2", topic: "Professional Grooming & Etiquette" },
@@ -111,6 +121,8 @@ export const programs: Program[] = [
     description: "Master modern marketing by leveraging AI. This course covers everything from SEO and social media to paid ads and analytics.",
     longDescription: "Stay ahead in the marketing world with this comprehensive 45-day program. You'll learn the foundations of digital marketing and discover how to use cutting-edge AI tools to enhance your strategy, create content, automate campaigns, and analyze results. A bonus training on resume building and career counselling is included.",
     icon: BarChart,
+    image: "/program-marketing-ai.jpg",
+    imageHint: "marketing AI",
     syllabus: [
         { week: "Week 1", topic: "Digital Marketing Foundations + AI Essentials" },
         { week: "Week 2", topic: "Website & Landing Page Basics" },

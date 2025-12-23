@@ -7,6 +7,7 @@ import { programs } from '@/lib/programs';
 import type { Program } from '@/lib/programs';
 import { notFound } from 'next/navigation';
 import { generateWhatsappLink } from '@/lib/config';
+import Image from 'next/image';
 
 export default function ProgramDetailContent({ slug }: { slug: string }) {
   const program = programs.find((p) => p.slug === slug);
@@ -40,6 +41,16 @@ export default function ProgramDetailContent({ slug }: { slug: string }) {
           {program.longDescription}
         </p>
       </header>
+
+      <Image
+        src={program.image}
+        alt={program.title}
+        width={800}
+        height={450}
+        className="w-full rounded-lg object-cover mb-12 aspect-[16/9]"
+        priority
+        data-ai-hint={program.imageHint}
+      />
 
       <div className="grid md:grid-cols-3 gap-8">
         <main className="md:col-span-2 space-y-12">
