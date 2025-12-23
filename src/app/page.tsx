@@ -42,8 +42,8 @@ export default function Home() {
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
   const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
 
-  const featuredPrograms = programs.filter(p => p.slug !== 'entrepreneurs-launch-pad').slice(0, 2);
-  const womenEmpowermentProgram = programs.find(p => p.slug === 'entrepreneurs-launch-pad');
+  const featuredPrograms = programs.filter(p => p.slug === 'women-skill-development' || p.slug === 'vocational-skills-for-women');
+  const entrepreneurProgram = programs.find(p => p.slug === 'entrepreneurs-launch-pad');
 
   const handleVideoEnd = () => {
     const nextIndex = (currentVideoIndex + 1) % videoPlaylist.length;
@@ -115,23 +115,23 @@ export default function Home() {
                     </p>
                 </div>
                 <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
-                    {/* Women Empowerment Card */}
-                    {womenEmpowermentProgram && (
+                    {/* Entrepreneur Program Card */}
+                    {entrepreneurProgram && (
                         <Card className="flex flex-col transition-transform transform hover:-translate-y-2 lg:col-span-1">
                             <CardHeader className="items-start gap-4 space-y-0">
                                 <div className="flex items-center gap-4">
                                     <div className="bg-accent text-accent-foreground rounded-full p-3">
                                         <Star className="h-6 w-6" />
                                     </div>
-                                    <CardTitle className="font-headline text-2xl">{womenEmpowermentProgram.title}</CardTitle>
+                                    <CardTitle className="font-headline text-2xl">{entrepreneurProgram.title}</CardTitle>
                                 </div>
                             </CardHeader>
                             <CardContent>
-                                <p className="text-muted-foreground">{womenEmpowermentProgram.description}</p>
+                                <p className="text-muted-foreground">{entrepreneurProgram.description}</p>
                             </CardContent>
                             <CardFooter className="mt-auto">
                                 <Button asChild variant="outline" className="w-full">
-                                    <Link href="/women-empowerment">Explore Initiative <ArrowRight className="ml-2 h-4 w-4" /></Link>
+                                    <Link href={`/programs/${entrepreneurProgram.slug}`}>Explore Program <ArrowRight className="ml-2 h-4 w-4" /></Link>
                                 </Button>
                             </CardFooter>
                         </Card>
@@ -155,7 +155,7 @@ export default function Home() {
                             </CardContent>
                             <CardFooter className="mt-auto">
                                 <Button asChild variant="outline" className="w-full">
-                                    <Link href={`/programs/${program.slug}`}>Learn More <ArrowRight className="ml-2 h-4 w-4" /></Link>
+                                    <Link href="/women-empowerment">Learn More <ArrowRight className="ml-2 h-4 w-4" /></Link>
                                 </Button>
                             </CardFooter>
                         </Card>

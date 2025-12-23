@@ -140,7 +140,7 @@ export default function WomenEmpowermentPage() {
                             </CardContent>
                              <CardFooter>
                                 <Button size="lg" className="w-full" asChild>
-                                  <Link href="/women-empowerment">
+                                  <Link href={`/programs/${skillDevProgram.slug}`}>
                                     Learn More
                                     <ArrowRight className="ml-2 h-4 w-4" />
                                   </Link>
@@ -174,7 +174,7 @@ export default function WomenEmpowermentPage() {
                             </CardContent>
                              <CardFooter>
                                 <Button size="lg" className="w-full" asChild>
-                                  <Link href="/women-empowerment">
+                                  <Link href={`/programs/${vocationalProgram.slug}`}>
                                      Learn More
                                     <ArrowRight className="ml-2 h-4 w-4" />
                                   </Link>
