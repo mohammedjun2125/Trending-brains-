@@ -39,42 +39,44 @@ const videoPlaylist = [
 ];
 
 export default function Home() {
-  const [playlist, setPlaylist] = useState(videoPlaylist);
   const videoRefs = [useRef<HTMLVideoElement>(null), useRef<HTMLVideoElement>(null)];
-  const [activeVideo, setActiveVideo] = useState(0);
+  const [activePlayer, setActivePlayer] = useState(0);
+  const [playlistIndex, setPlaylistIndex] = useState(0);
 
   useEffect(() => {
-    // Start playing the first video
-    const currentVideo = videoRefs[activeVideo].current;
-    if (currentVideo) {
-      currentVideo.play().catch(error => console.error("Autoplay was prevented:", error));
+    // Set initial sources
+    if (videoRefs[0].current) {
+        videoRefs[0].current.src = videoPlaylist[0];
     }
-
-    // Preload the next video
-    const nextVideoIndex = (activeVideo + 1) % 2;
-    const nextVideo = videoRefs[nextVideoIndex].current;
-    if (nextVideo) {
-        const nextSrcIndex = (playlist.indexOf(currentVideo?.src.split('/').pop() || '') + 1) % playlist.length;
-        if (!nextVideo.src.endsWith(playlist[nextSrcIndex])) {
-             nextVideo.src = playlist[nextSrcIndex];
-             nextVideo.load();
-        }
+    if (videoRefs[1].current) {
+        videoRefs[1].current.src = videoPlaylist[1];
     }
-  }, [activeVideo, playlist, videoRefs]);
-
+  }, []);
 
   const handleVideoEnd = () => {
-    // Switch to the next preloaded video
-    const nextPlayer = (activeVideo + 1) % 2;
-    setActiveVideo(nextPlayer);
+    // Increment playlist index
+    const nextPlaylistIndex = (playlistIndex + 1) % videoPlaylist.length;
+    setPlaylistIndex(nextPlaylistIndex);
+    
+    // Switch the active player
+    const nextPlayer = (activePlayer + 1) % 2;
+    setActivePlayer(nextPlayer);
 
-    // Update the playlist rotation
-    setPlaylist(prev => {
-        const newPlaylist = [...prev];
-        newPlaylist.push(newPlaylist.shift()!);
-        return newPlaylist;
-    });
+    // Preload the *next* video on the now-hidden player
+    const playerToPreload = videoRefs[activePlayer].current;
+    if (playerToPreload) {
+        const videoToPreloadIndex = (nextPlaylistIndex + 1) % videoPlaylist.length;
+        playerToPreload.src = videoPlaylist[videoToPreloadIndex];
+        playerToPreload.load();
+    }
   };
+
+  useEffect(() => {
+    const currentPlayer = videoRefs[activePlayer].current;
+    if (currentPlayer) {
+        currentPlayer.play().catch(error => console.error("Autoplay was prevented:", error));
+    }
+  }, [activePlayer]);
 
 
   return (
@@ -85,8 +87,7 @@ export default function Home() {
           
           <video
             ref={videoRefs[0]}
-            src={playlist[0]}
-            className={cn("absolute top-0 left-0 w-full h-full object-cover -z-10 brightness-50 transition-opacity duration-1000", activeVideo === 0 ? "opacity-100" : "opacity-0")}
+            className={cn("absolute top-0 left-0 w-full h-full object-cover -z-10 brightness-50 transition-opacity duration-1000", activePlayer === 0 ? "opacity-100" : "opacity-0")}
             muted
             playsInline
             onEnded={handleVideoEnd}
@@ -94,8 +95,7 @@ export default function Home() {
           />
           <video
             ref={videoRefs[1]}
-            src={playlist[1]}
-            className={cn("absolute top-0 left-0 w-full h-full object-cover -z-10 brightness-50 transition-opacity duration-1000", activeVideo === 1 ? "opacity-100" : "opacity-0")}
+            className={cn("absolute top-0 left-0 w-full h-full object-cover -z-10 brightness-50 transition-opacity duration-1000", activePlayer === 1 ? "opacity-100" : "opacity-0")}
             muted
             playsInline
             onEnded={handleVideoEnd}
@@ -246,3 +246,5 @@ export default function Home() {
     </div>
   );
 }
+
+    
