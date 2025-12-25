@@ -6,28 +6,27 @@ import { Footer } from "@/components/layout/footer";
 import { WhatsAppButton } from "@/components/layout/WhatsAppButton";
 import { WHATSAPP_NUMBER } from "@/lib/config";
 
-const SITE_TITLE = "Trending Brains Academy";
-const SITE_DESCRIPTION = "Empowering women with expert-led online courses in technology, design, and business. Start your journey in digital marketing, full-stack development, and leadership.";
-
 export const metadata: Metadata = {
-  title: {
-    default: SITE_TITLE,
-    template: `%s | ${SITE_TITLE}`,
+  title: "Trending Brains – Future Ready Academy",
+  description:
+    "Trending Brains is a future-focused academy for skills, AI, leadership, and empowerment.",
+  icons: {
+    icon: "/icon.png",
+    shortcut: "/tb-favicon.ico",
   },
-  description: SITE_DESCRIPTION,
   metadataBase: new URL("https://www.trendingbrains.com"), // Use www domain
   openGraph: {
-    title: SITE_TITLE,
-    description: SITE_DESCRIPTION,
-    siteName: SITE_TITLE,
+    title: "Trending Brains – Future Ready Academy",
+    description: "Trending Brains is a future-focused academy for skills, AI, leadership, and empowerment.",
+    siteName: "Trending Brains Academy",
     locale: "en_US",
     type: "website",
     url: "https://www.trendingbrains.com", // Use www domain
   },
   twitter: {
     card: "summary_large_image",
-    title: SITE_TITLE,
-    description: SITE_DESCRIPTION,
+    title: "Trending Brains – Future Ready Academy",
+    description: "Trending Brains is a future-focused academy for skills, AI, leadership, and empowerment.",
   },
   alternates: {
     canonical: '/',
@@ -47,9 +46,6 @@ export const metadata: Metadata = {
   authors: [{ name: "Trending Brains Academy" }],
   creator: "Trending Brains Academy",
   publisher: "Trending Brains Academy",
-  icons: {
-    icon: "/tb-favicon.ico",
-  },
 };
 
 export const viewport: Viewport = {
