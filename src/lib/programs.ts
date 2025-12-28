@@ -69,7 +69,7 @@ export const programs: Program[] = [
   {
     slug: "vocational-skills-for-women",
     title: "Vocational Skills for Women",
-    duration: "Varies by Skill",
+    duration: "1 Week",
     fee: "₹4499",
     description: "Choose a practical skill to master, from tailoring and fashion to cooking and baking, and turn your passion into a profession.",
     longDescription: "Our Vocational Skills program allows women to choose a specific hands-on skill to develop. Each track provides expert training to help you master your craft, whether it's for personal enrichment or to start your own small business. Please note: You must choose one stream to specialize in.",
