@@ -197,6 +197,68 @@ export const posts: Post[] = [
     imageHint: 'women learning'
   },
   {
+    slug: 'job-ready-skills-for-2025',
+    title: 'Job-Ready Skills: What Employers Are Looking for in 2025',
+    description: 'Employers today are not just looking for degrees—they want candidates with job-ready skills. This guide covers the in-demand skills you need for career growth in 2025.',
+    author: 'Jane Doe',
+    authorImage: 'https://picsum.photos/seed/jd/100/100',
+    date: 'November 5, 2024',
+    tags: ['Job-Ready Skills', 'Career Growth', 'Employability'],
+    content: `
+        <p>The job market is changing faster than ever. Employers today are not just looking for degrees — they want candidates with job-ready skills who can contribute from day one. This shift has made skill-based learning more important than traditional education alone.</p>
+        <p>If you want faster career growth and better job opportunities, developing the right skills is essential.</p>
+        <h3 class="font-headline text-xl font-bold mt-6 mb-2">What Are Job-Ready Skills?</h3>
+        <p>Job-ready skills are practical abilities that help individuals perform effectively in real work environments. These skills go beyond theory and focus on problem-solving, communication, and hands-on experience.</p>
+        <p>Examples include:</p>
+        <ul class="list-disc list-inside space-y-2 my-4">
+            <li>Professional communication</li>
+            <li>Digital and technical skills</li>
+            <li>Business and workplace skills</li>
+            <li>Time management and adaptability</li>
+        </ul>
+        <h3 class="font-headline text-xl font-bold mt-6 mb-2">Why Job-Ready Skills Matter for Career Growth</h3>
+        <p>Employers prefer candidates who:</p>
+        <ul class="list-disc list-inside space-y-2 my-4">
+            <li>Require minimal training</li>
+            <li>Adapt quickly to work environments</li>
+            <li>Communicate effectively</li>
+            <li>Understand real-world work processes</li>
+        </ul>
+        <p>Developing employability skills increases job security and career stability.</p>
+        <h3 class="font-headline text-xl font-bold mt-6 mb-2">In-Demand Skills You Should Learn</h3>
+        <p>Some of the most in-demand skills in today’s job market include:</p>
+        <ul class="list-disc list-inside space-y-2 my-4">
+            <li>Digital & professional skills</li>
+            <li>Business and entrepreneurship skills</li>
+            <li>Communication & teamwork</li>
+            <li>Financial and problem-solving skills</li>
+        </ul>
+        <p>These skills are commonly taught through online skill development courses.</p>
+        <h3 class="font-headline text-xl font-bold mt-6 mb-2">How Skill Development Courses Help</h3>
+        <p>Skill development courses focus on:</p>
+        <ul class="list-disc list-inside space-y-2 my-4">
+            <li>Practical learning</li>
+            <li>Industry-relevant training</li>
+            <li>Real-world examples</li>
+            <li>Certification-based education</li>
+        </ul>
+        <p>They help learners become confident and job-ready faster.</p>
+        <h3 class="font-headline text-xl font-bold mt-6 mb-2">Build Job-Ready Skills with Trending Brains Academy</h3>
+        <p>Trending Brains Academy offers skill development courses designed to prepare learners for real-world careers.</p>
+        <p>Why Choose Trending Brains?</p>
+        <ul class="list-disc list-inside space-y-2 my-4">
+            <li>Practical, hands-on learning</li>
+            <li>Career-focused programs</li>
+            <li>Industry-relevant skills</li>
+            <li>Certification support</li>
+        </ul>
+        <h3 class="font-headline text-xl font-bold mt-6 mb-2">Conclusion</h3>
+        <p>In 2025, success belongs to those with job-ready skills. By focusing on practical learning and in-demand abilities, you can improve employability, achieve career growth, and stay competitive in the job market.</p>
+    `,
+    image: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxqb2IlMjBza2lsbHN8ZW58MHx8fHwxNzY2MDYwODU0fDA&ixlib=rb-4.0.3&q=80&w=1080',
+    imageHint: 'job skills'
+  },
+  {
     slug: 'how-to-choose-a-career',
     title: 'A Practical Guide on How to Choose a Career You Love',
     description: 'Feeling lost about your career path? This guide will walk you through the essential steps to identify your passions, assess your skills, and find a career that truly fulfills you.',
