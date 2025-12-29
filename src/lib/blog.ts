@@ -1,3 +1,4 @@
+
 import type { StaticImageData } from 'next/image';
 
 export type Post = {
@@ -133,6 +134,67 @@ export const posts: Post[] = [
     `,
     image: 'https://images.unsplash.com/photo-1542744095-fcf48d80b0fd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxza2lsbCUyMGRldmVsb3BtZW50fGVufDB8fHx8MTc2NjAzMDM1Nnww&ixlib=rb-4.0.3&q=80&w=1080',
     imageHint: 'skill development'
+  },
+  {
+    slug: 'women-skill-development-programs',
+    title: 'Women Skill Development Programs: Building Confidence, Careers, and Financial Independence',
+    description: 'Women skill development programs play a vital role in empowering women with the knowledge, confidence, and practical skills needed for career growth and financial independence.',
+    author: 'Jane Doe',
+    authorImage: 'https://picsum.photos/seed/jd/100/100',
+    date: 'November 2, 2024',
+    tags: ['Women Empowerment', 'Skill Development', 'Career Growth'],
+    content: `
+        <p>Women today are actively shaping their futures through learning and skill development. Women skill development programs play a vital role in empowering women with the knowledge, confidence, and practical skills needed for career growth and financial independence.</p>
+        <p>With the availability of online learning platforms, women can now upskill from home and build meaningful careers without compromising personal responsibilities.</p>
+        <h3 class="font-headline text-xl font-bold mt-6 mb-2">Why Skill Development Is Important for Women</h3>
+        <p>Skill development helps women:</p>
+        <ul class="list-disc list-inside space-y-2 my-4">
+            <li>Gain confidence and self-reliance</li>
+            <li>Improve employability</li>
+            <li>Restart careers after breaks</li>
+            <li>Explore entrepreneurship opportunities</li>
+        </ul>
+        <p>Skill development for women is not just about jobs — it’s about long-term empowerment.</p>
+        <h3 class="font-headline text-xl font-bold mt-6 mb-2">Online Skill Development Courses for Women</h3>
+        <p>Online courses offer flexibility, affordability, and practical learning. Popular options include:</p>
+        <ul class="list-disc list-inside space-y-2 my-4">
+            <li>Digital & professional skills</li>
+            <li>Business and entrepreneurship training</li>
+            <li>Communication and personality development</li>
+            <li>Vocational and practical skills</li>
+        </ul>
+        <p>These online skill development courses help women build job-ready skills at their own pace.</p>
+        <h2 class="font-headline text-2xl font-bold mt-8 mb-4">Women Empowerment Through Skill-Based Learning</h2>
+        <p>Women empowerment courses focus on:</p>
+        <ul class="list-disc list-inside space-y-2 my-4">
+            <li>Practical skills</li>
+            <li>Financial literacy</li>
+            <li>Decision-making abilities</li>
+            <li>Confidence building</li>
+        </ul>
+        <p>Many women use these programs to start home-based businesses or freelance careers.</p>
+        <h3 class="font-headline text-xl font-bold mt-6 mb-2">Entrepreneurship Training for Women</h3>
+        <p>Entrepreneurship training helps women:</p>
+        <ul class="list-disc list-inside space-y-2 my-4">
+            <li>Understand business basics</li>
+            <li>Develop problem-solving skills</li>
+            <li>Build sustainable income sources</li>
+        </ul>
+        <p>Entrepreneurship training for women is becoming a powerful path to independence.</p>
+        <h3 class="font-headline text-xl font-bold mt-6 mb-2">Why Choose Trending Brains Academy</h3>
+        <p>Trending Brains Academy offers skill-based programs designed specifically to support career growth for women.</p>
+        <p>Key Benefits:</p>
+        <ul class="list-disc list-inside space-y-2 my-4">
+            <li>Practical and easy-to-learn skills</li>
+            <li>Flexible online learning</li>
+            <li>Certification-based programs</li>
+            <li>Women-focused career support</li>
+        </ul>
+        <h3 class="font-headline text-xl font-bold mt-6 mb-2">Conclusion</h3>
+        <p>Women skill development programs are transforming lives by creating opportunities for learning, earning, and leadership. With the right skills, women can build strong careers and independent futures.</p>
+    `,
+    image: 'https://images.unsplash.com/photo-1573164574511-73c773193477?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHx3b21lbiUyMGxlYXJuaW5nfGVufDB8fHx8MTc2NjA1MDM4OXww&ixlib=rb-4.0.3&q=80&w=1080',
+    imageHint: 'women learning'
   },
   {
     slug: 'how-to-choose-a-career',
