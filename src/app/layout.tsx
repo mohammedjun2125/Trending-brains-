@@ -1,3 +1,4 @@
+
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
@@ -7,41 +8,42 @@ import { WhatsAppButton } from "@/components/layout/WhatsAppButton";
 import { WHATSAPP_NUMBER } from "@/lib/config";
 
 export const metadata: Metadata = {
-  title: "Trending Brains – Future Ready Academy",
-  description:
-    "Trending Brains is a future-focused academy for skills, AI, leadership, and empowerment.",
+  title: "Online Skill Development & Career Training | Trending Brains Academy",
+  description: "Learn job-ready skills, earn certifications, and grow your career with online skill development, women empowerment & entrepreneurship programs.",
   icons: {
     icon: "/icon.png",
     shortcut: "/tb-favicon.ico",
   },
   metadataBase: new URL("https://www.trendingbrains.com"), // Use www domain
   openGraph: {
-    title: "Trending Brains – Future Ready Academy",
-    description: "Trending Brains is a future-focused academy for skills, AI, leadership, and empowerment.",
+    title: "Online Skill Development & Career Training | Trending Brains Academy",
+    description: "Learn job-ready skills, earn certifications, and grow your career with our practical online courses.",
     siteName: "Trending Brains Academy",
-    locale: "en_US",
+    locale: "en_IN",
     type: "website",
     url: "https://www.trendingbrains.com", // Use www domain
   },
   twitter: {
     card: "summary_large_image",
-    title: "Trending Brains – Future Ready Academy",
-    description: "Trending Brains is a future-focused academy for skills, AI, leadership, and empowerment.",
+    title: "Online Skill Development & Career Training | Trending Brains Academy",
+    description: "Learn job-ready skills, earn certifications, and grow your career with our practical online courses.",
   },
   alternates: {
     canonical: '/',
   },
   manifest: "/manifest.json",
   keywords: [
-    "Trending Brains Academy",
-    "online courses",
-    "women empowerment",
-    "digital marketing course",
-    "full-stack development course",
-    "leadership training",
-    "skill development",
-    "career growth for women",
-    "online education",
+    "online skill development courses",
+    "skill development courses",
+    "job-ready skills",
+    "career growth",
+    "online courses with certification",
+    "practical skills training",
+    "women skill development programs",
+    "women empowerment courses",
+    "entrepreneurship training for women",
+    "vocational training courses",
+    "online learning platform India",
   ],
   authors: [{ name: "Trending Brains Academy" }],
   creator: "Trending Brains Academy",
@@ -72,6 +74,7 @@ export default function RootLayout({
           href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Poppins:wght@600;700&display=swap"
           rel="stylesheet"
         />
+        <meta name="google-site-verification" content="google4272a75c1f5aca66" />
       </head>
       <body className="font-body antialiased">
         <div className="flex min-h-screen flex-col">

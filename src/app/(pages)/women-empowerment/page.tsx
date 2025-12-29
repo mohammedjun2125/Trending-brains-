@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import Image from "next/image";
@@ -17,9 +18,9 @@ import { generateWhatsappLink, WHATSAPP_LINK } from "@/lib/config";
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: "Women Empowerment Initiative",
-  description: "Join the Trending Brains Academy's programs for women. We provide training in skill development, vocational trades, and leadership to help women launch businesses and excel.",
-  keywords: ["women empowerment", "skill development for women", "vocational training", "women in business", "Trending Brains Academy"],
+  title: "Women Empowerment & Skill Development Programs | Trending Brains",
+  description: "Join our women empowerment courses in India. We provide practical skills training, vocational courses, and entrepreneurship programs to help women achieve financial independence and career growth.",
+  keywords: ["women empowerment courses", "women skill development programs", "entrepreneurship training for women", "vocational training for women", "financial independence for women", "Trending Brains Academy"],
   alternates: {
     canonical: "/women-empowerment",
   },
@@ -28,18 +29,18 @@ export const metadata: Metadata = {
 const stats = [
   { value: "10,000+", label: "Women Trained" },
   { value: "1,500+", label: "Entrepreneurs Launched" },
-  { value: "50+", label: "Expert-led Programs" },
-  { value: "98%", label: "Placement Rate" },
+  { value: "50+", label: "Skill Development Programs" },
+  { value: "98%", label: "Success Rate" },
 ];
 
 const purposePoints = [
-    "Remove economic barriers for women",
-    "Create income opportunities",
-    "Build women entrepreneurs",
-    "Provide leadership & skill-based development",
-    "Ensure financial literacy",
+    "Remove economic barriers through skill development",
+    "Create sustainable income opportunities",
+    "Build confident women entrepreneurs",
+    "Provide leadership & practical skills training",
+    "Ensure financial literacy and independence",
     "Support legal & safety awareness",
-    "Build strong women communities and ambassadors",
+    "Build a strong community of women leaders",
 ];
 
 
@@ -71,10 +72,10 @@ export default function WomenEmpowermentPage() {
             <div className="max-w-3xl mx-auto">
               <p className="text-lg font-semibold text-accent">An Initiative by Trending Brains Academy</p>
               <h1 className="mt-2 text-4xl font-headline font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl">
-                Empowering Women, Building Futures
+                Women Empowerment Through Skill Development
               </h1>
               <p className="mt-4 text-lg md:text-xl">
-                Join our mission to equip women with the skills, confidence, and network to excel in their careers and launch their own ventures.
+                Our women empowerment courses are designed to provide the skills, confidence, and network for financial independence and career growth.
               </p>
               <div className="mt-8">
                 <Button size="lg" asChild>
@@ -91,7 +92,7 @@ export default function WomenEmpowermentPage() {
             <div className="text-center mb-12">
                 <h2 className="text-3xl font-bold font-headline tracking-tighter sm:text-4xl md:text-5xl">Our Impact in Numbers</h2>
                 <p className="max-w-2xl mx-auto mt-4 text-muted-foreground md:text-xl/relaxed">
-                    We are proud of the community we've built and the success of our students.
+                    We are proud of the community we've built and the success stories from our women skill development programs.
                 </p>
             </div>
             <div className="grid grid-cols-2 gap-8 md:grid-cols-4 max-w-5xl mx-auto">
@@ -109,9 +110,9 @@ export default function WomenEmpowermentPage() {
         <section className="py-12 md:py-24">
             <div className="container px-4 md:px-6">
                  <div className="text-center mb-12">
-                    <h2 className="text-3xl font-bold font-headline tracking-tighter sm:text-4xl md:text-5xl">Our Core Empowerment Programs</h2>
+                    <h2 className="text-3xl font-bold font-headline tracking-tighter sm:text-4xl md:text-5xl">Our Women Empowerment Courses</h2>
                     <p className="max-w-2xl mx-auto mt-4 text-muted-foreground md:text-xl/relaxed">
-                       Foundational programs to help women build skills and create opportunities.
+                       Explore our practical skills training and vocational programs designed for women.
                     </p>
                 </div>
                 <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
@@ -160,7 +161,7 @@ export default function WomenEmpowermentPage() {
                             </CardHeader>
                             <CardContent className="flex-grow">
                                <h4 className="font-semibold mb-4 text-lg">Choose Your Track</h4>
-                                <p className="text-sm text-muted-foreground mb-4">Note: You must choose one stream to specialize in.</p>
+                                <p className="text-sm text-muted-foreground mb-4">Our vocational training courses help you specialize in one stream.</p>
                                 <ul className="space-y-3">
                                   {vocationalProgram.syllabus.map(item => (
                                     <li key={item.topic} className="flex items-start gap-3">
@@ -183,6 +184,11 @@ export default function WomenEmpowermentPage() {
                         </Card>
                     )}
                 </div>
+                 <div className="text-center mt-12">
+                    <Button asChild size="lg" variant="link" className="text-accent text-base">
+                        <Link href="/programs/general">View All Vocational Training Programs in India <ArrowRight className="ml-2 h-4 w-4" /></Link>
+                    </Button>
+                </div>
             </div>
         </section>
 
@@ -198,20 +204,17 @@ export default function WomenEmpowermentPage() {
                     </p>
                 </div>
                  <div>
-                    <h2 className="text-3xl font-bold font-headline mb-4 flex items-center gap-3"><Hand className="h-8 w-8 text-accent"/>Our Mission</h2>
+                    <h2 className="text-3xl font-bold font-headline mb-4 flex items-center gap-3"><Hand className="h-8 w-8 text-accent"/>Our Mission for Women Empowerment</h2>
                      <p className="text-muted-foreground">
-                       Our mission is to cultivate a transformative ecosystem where women are equipped not just with skills, but with a strong sense of purpose, confidence, and financial independence. We are committed to shaping a generation of dynamic women who can break barriers, challenge norms, and lead with innovation and resilience.
+                       Our mission is to cultivate a transformative ecosystem where women are equipped not just with skills, but with a strong sense of purpose, confidence, and financial independence. We are committed to shaping a generation of dynamic women who can break barriers through our entrepreneurship training for women.
                     </p>
                     <p className="text-muted-foreground mt-4">
-                       By providing structured training, mentorship, entrepreneurial exposure, and leadership development opportunities, we empower women to realise their fullest potential. Our approach ensures they gain the competencies, mindset, and resources required to thrive in high-growth careers, build successful enterprises, and contribute meaningfully to the socio-economic progress of their communities.
-                    </p>
-                     <p className="text-muted-foreground mt-4">
-                       We envision a future where every woman has the opportunity, capability, and confidence to create her own path—whether as a leader in the corporate world or as an entrepreneur driving change. Through continuous learning, empowerment, and purpose-driven development, we aspire to nurture women who inspire others, uplift communities, and reshape the future with their leadership.
+                       By providing structured training, mentorship, and leadership development, we empower women to realise their fullest potential. Our approach ensures they gain the competencies, mindset, and resources required to thrive in high-growth careers, build successful enterprises, and contribute meaningfully to their communities.
                     </p>
                 </div>
               </div>
                <div>
-                  <h2 className="text-3xl font-bold font-headline mb-6">Our Purpose</h2>
+                  <h2 className="text-3xl font-bold font-headline mb-6">Our Purpose: Building a Better Future</h2>
                   <div className="space-y-4">
                      {purposePoints.map((point) => (
                         <div key={point} className="flex items-start gap-3">
@@ -233,7 +236,7 @@ export default function WomenEmpowermentPage() {
                 <div className="rounded-lg bg-accent p-8 text-center text-accent-foreground md:p-12 max-w-4xl mx-auto">
                     <h2 className="text-3xl font-bold font-headline tracking-tighter sm:text-4xl">Join a Community of Changemakers</h2>
                     <p className="mt-4 max-w-xl mx-auto text-accent-foreground/90">
-                        Take the first step towards a brighter future. Enroll today and become part of a supportive network of ambitious women.
+                        Take the first step towards a brighter future. Enroll in our women skill development program today and become part of a supportive network of ambitious women.
                     </p>
                     <div className="mt-8">
                         <Button size="lg" variant="secondary" asChild>

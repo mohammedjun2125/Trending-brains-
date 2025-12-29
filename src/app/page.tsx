@@ -12,7 +12,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { ArrowRight, Star } from "lucide-react";
+import { ArrowRight, Star, Award, Briefcase, UserCheck } from "lucide-react";
 import { programs } from "@/lib/programs";
 import { cn } from "@/lib/utils";
 
@@ -21,13 +21,13 @@ const testimonials = [
   {
     name: "Aisha Khan",
     title: "Founder, Bloom Creatives",
-    quote: "Trending Brains Academy gave me the confidence and skills to launch my own startup. The mentorship was invaluable.",
+    quote: "The entrepreneurship program gave me the exact skills and confidence I needed to launch my own startup. The practical training was invaluable.",
     avatar: "https://picsum.photos/seed/tk/100/100"
   },
   {
     name: "Priya Sharma",
     title: "Digital Marketer, TechCorp",
-    quote: "The practical, hands-on approach of the digital marketing program helped me land my dream job. I can't recommend it enough!",
+    quote: "Thanks to the practical, hands-on approach of the digital marketing program, I achieved significant career growth and landed my dream job.",
     avatar: "https://picsum.photos/seed/ps/100/100"
   },
 ];
@@ -36,6 +36,29 @@ const videoPlaylist = [
   "/hero-video.mp4",
   "/hero-video-2.mp4",
   "/hero-video-3.mp4",
+];
+
+const whyChooseUs = [
+    {
+        icon: Briefcase,
+        title: "Job-Ready Skills",
+        description: "Our courses are designed with industry experts to teach you the practical skills that employers are looking for right now."
+    },
+    {
+        icon: Award,
+        title: "Industry-Recognized Certification",
+        description: "Earn a certificate upon completion to validate your new skills and enhance your resume for better job opportunities."
+    },
+    {
+        icon: UserCheck,
+        title: "Practical, Hands-On Training",
+        description: "Learn by doing. Our programs focus on real-world projects and case studies to ensure you can apply what you learn."
+    },
+    {
+        icon: Star,
+        title: "Empowerment & Entrepreneurship",
+        description: "We offer dedicated programs to empower women and aspiring entrepreneurs to build confidence and launch their ventures."
+    }
 ];
 
 export default function Home() {
@@ -106,30 +129,55 @@ export default function Home() {
           <div className="container px-4 md:px-6 text-center text-primary-foreground relative z-10">
             <div className="max-w-3xl mx-auto">
               <h1 className="text-4xl font-headline font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl">
-                Unlock Your Potential, Transform Your Future
+                Online Skill Development & Job-Ready Courses for Career Growth
               </h1>
               <p className="mt-4 text-lg md:text-xl">
-                Trending Brains Academy offers expert-led courses in technology, design, and business to help you achieve your career goals.
+                Gain practical skills and earn certifications with our career-focused training programs. Start your journey to success today.
               </p>
               <div className="mt-8 flex flex-wrap justify-center gap-4">
                 <Button size="lg" asChild>
                   <Link href="/programs">Explore Our Programs</Link>
                 </Button>
-                <Button size="lg" variant="outline" className="bg-transparent border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-black">
-                  <Link href="/about">About Us</Link>
+                 <Button size="lg" variant="secondary" asChild>
+                   <Link href="/contact">Enroll Now</Link>
                 </Button>
               </div>
             </div>
           </div>
         </section>
         
+        {/* Why Choose Us Section */}
+        <section className="py-12 md:py-24 bg-muted">
+            <div className="container px-4 md:px-6">
+                 <div className="text-center mb-12">
+                    <h2 className="text-3xl font-bold font-headline tracking-tighter sm:text-4xl md:text-5xl">Why Choose Trending Brains Academy?</h2>
+                    <p className="max-w-3xl mx-auto mt-4 text-muted-foreground md:text-xl/relaxed">
+                        We are an online learning platform in India dedicated to helping you achieve your career goals with industry-relevant skills and practical training.
+                    </p>
+                </div>
+                <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4 max-w-6xl mx-auto">
+                    {whyChooseUs.map((feature) => {
+                        const Icon = feature.icon;
+                        return (
+                        <div key={feature.title} className="text-center">
+                            <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-accent text-accent-foreground mb-4">
+                                <Icon className="h-8 w-8" />
+                            </div>
+                            <h3 className="text-xl font-bold font-headline">{feature.title}</h3>
+                            <p className="mt-2 text-muted-foreground">{feature.description}</p>
+                        </div>
+                    )})}
+                </div>
+            </div>
+        </section>
+
         {/* Featured Courses Section */}
         <section className="py-12 md:py-24">
             <div className="container px-4 md:px-6">
                 <div className="text-center mb-12">
-                    <h2 className="text-3xl font-bold font-headline tracking-tighter sm:text-4xl md:text-5xl">Our Premier Programs</h2>
+                    <h2 className="text-3xl font-bold font-headline tracking-tighter sm:text-4xl md:text-5xl">Our Premier Online Courses with Certification</h2>
                     <p className="max-w-2xl mx-auto mt-4 text-muted-foreground md:text-xl/relaxed">
-                        Designed by industry experts to give you a competitive edge.
+                        Explore our featured programs designed by industry experts to give you a competitive edge in your career.
                     </p>
                 </div>
                 <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
@@ -181,7 +229,7 @@ export default function Home() {
                 </div>
                  <div className="text-center mt-12">
                     <Button asChild size="lg" variant="link" className="text-accent text-base">
-                        <Link href="/programs">View All Programs <ArrowRight className="ml-2 h-4 w-4" /></Link>
+                        <Link href="/programs">View All Skill Development Courses <ArrowRight className="ml-2 h-4 w-4" /></Link>
                     </Button>
                 </div>
             </div>
@@ -191,9 +239,9 @@ export default function Home() {
         <section className="py-12 md:py-24 bg-muted">
             <div className="container px-4 md:px-6">
                 <div className="text-center mb-12">
-                    <h2 className="text-3xl font-bold font-headline tracking-tighter sm:text-4xl md:text-5xl">From Our Community</h2>
+                    <h2 className="text-3xl font-bold font-headline tracking-tighter sm:text-4xl md:text-5xl">Success Stories from Our Community</h2>
                     <p className="max-w-2xl mx-auto mt-4 text-muted-foreground md:text-xl/relaxed">
-                        Hear what our successful alumni have to say and read our latest insights.
+                        Hear how our practical skills training has transformed careers and launched businesses.
                     </p>
                 </div>
                 <div className="grid gap-8 md:grid-cols-2 max-w-4xl mx-auto">
@@ -220,7 +268,7 @@ export default function Home() {
                 </div>
                 <div className="text-center mt-12">
                     <Button asChild size="lg" variant="link" className="text-accent text-base">
-                        <Link href="/blog">Explore Our Blog <ArrowRight className="ml-2 h-4 w-4" /></Link>
+                        <Link href="/blog">Read More Success Stories <ArrowRight className="ml-2 h-4 w-4" /></Link>
                     </Button>
                 </div>
             </div>
@@ -230,9 +278,9 @@ export default function Home() {
         <section className="py-12 md:py-24">
             <div className="container px-4 md:px-6">
                 <div className="rounded-lg bg-accent p-8 text-center text-accent-foreground md:p-12 max-w-4xl mx-auto">
-                    <h2 className="text-3xl font-bold font-headline tracking-tighter sm:text-4xl">Ready to Start Your Journey?</h2>
+                    <h2 className="text-3xl font-bold font-headline tracking-tighter sm:text-4xl">Ready to Achieve Your Career Goals?</h2>
                     <p className="mt-4 max-w-xl mx-auto text-accent-foreground/90">
-                        Your future is waiting. Enroll in a program today and take the first step towards a brighter tomorrow.
+                        Enroll in one of our online courses with certification today and take the first step towards significant career growth. Your future is waiting.
                     </p>
                     <div className="mt-8">
                         <Button size="lg" variant="secondary" asChild>
@@ -246,5 +294,3 @@ export default function Home() {
     </div>
   );
 }
-
-    
