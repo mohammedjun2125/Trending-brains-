@@ -1,8 +1,11 @@
+
 import { notFound } from 'next/navigation';
 import { programs } from '@/lib/programs';
+import { posts } from '@/lib/blog';
 import ProgramDetailClient from './ProgramDetailClient';
 import type { Metadata } from 'next';
 import Image from 'next/image';
+import Link from 'next/link';
 import type { Program } from '@/lib/programs';
 
 export function generateStaticParams() {
@@ -58,6 +61,21 @@ export default function ProgramDetailPage({ params }: { params: { slug: string }
   // Create a serializable version of the program object without the icon
   const { icon, ...serializableProgram } = program;
 
+  const getRelatedArticles = () => {
+      switch(program.slug) {
+          case 'entrepreneurs-launch-pad':
+              return posts.filter(p => p.slug === 'entrepreneurship-training-start-business' || p.slug === 'student-success-story');
+          case 'women-skill-development':
+              return posts.filter(p => p.slug === 'women-skill-development-programs' || p.slug === 'job-ready-skills-for-2025');
+          case 'vocational-skills-for-women':
+              return posts.filter(p => p.slug === 'vocational-training-programs-india' || p.slug === 'women-skill-development-programs');
+          default:
+               return posts.filter(p => p.slug === 'skill-development-courses-in-india' || p.slug === 'online-courses-with-certification-career-growth').slice(0,2);
+      }
+  }
+
+  const relatedArticles = getRelatedArticles();
+
 
   return (
      <div className="container max-w-4xl mx-auto py-12 md:py-16">
@@ -86,6 +104,20 @@ export default function ProgramDetailPage({ params }: { params: { slug: string }
         />
 
         <ProgramDetailClient program={serializableProgram} />
+
+        {relatedArticles.length > 0 && (
+            <section className="mt-16">
+                <h2 className="text-2xl font-bold font-headline mb-6 text-center">Related Articles</h2>
+                <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+                    {relatedArticles.map(post => (
+                        <Link key={post.slug} href={`/blog/${post.slug}`} className="block p-4 rounded-lg border hover:bg-muted transition-colors">
+                            <h3 className="font-semibold font-headline">{post.title}</h3>
+                            <p className="text-sm text-muted-foreground mt-2 line-clamp-2">{post.description}</p>
+                        </Link>
+                    ))}
+                </div>
+            </section>
+        )}
     </div>
   );
 }

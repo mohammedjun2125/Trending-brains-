@@ -152,7 +152,7 @@ export default function Home() {
                  <div className="text-center mb-12">
                     <h2 className="text-3xl font-bold font-headline tracking-tighter sm:text-4xl md:text-5xl">Why Choose Trending Brains Academy?</h2>
                     <p className="max-w-3xl mx-auto mt-4 text-muted-foreground md:text-xl/relaxed">
-                        We are an online learning platform in India dedicated to helping you achieve your career goals with industry-relevant skills and practical training.
+                        We are an <Link href="/about" className="text-accent underline">online learning platform in India</Link> dedicated to helping you achieve your career goals with industry-relevant skills and practical training.
                     </p>
                 </div>
                 <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4 max-w-6xl mx-auto">
@@ -177,7 +177,7 @@ export default function Home() {
                 <div className="text-center mb-12">
                     <h2 className="text-3xl font-bold font-headline tracking-tighter sm:text-4xl md:text-5xl">Our Premier Online Courses with Certification</h2>
                     <p className="max-w-2xl mx-auto mt-4 text-muted-foreground md:text-xl/relaxed">
-                        Explore our featured programs designed by industry experts to give you a competitive edge in your career.
+                        Explore our featured programs designed by industry experts to give you a competitive edge in your career. From <Link href="/programs/entrepreneurs-launch-pad" className="text-accent underline">entrepreneurship training</Link> to specialized <Link href="/women-empowerment" className="text-accent underline">women skill development programs</Link>, we have a course for you.
                     </p>
                 </div>
                 <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
@@ -206,6 +206,7 @@ export default function Home() {
                     {/* Other Program Cards */}
                     {programs.filter(p => p.slug === 'women-skill-development' || p.slug === 'vocational-skills-for-women').map((program) => {
                         const Icon = program.icon;
+                        const link = program.slug === 'vocational-skills-for-women' ? `/programs/${program.slug}` : '/women-empowerment';
                         return (
                         <Card key={program.title} className="flex flex-col transition-transform transform hover:-translate-y-2">
                             <CardHeader className="items-start gap-4 space-y-0">
@@ -221,7 +222,7 @@ export default function Home() {
                             </CardContent>
                             <CardFooter className="mt-auto">
                                 <Button asChild variant="outline" className="w-full">
-                                    <Link href="/women-empowerment">Learn More <ArrowRight className="ml-2 h-4 w-4" /></Link>
+                                    <Link href={link}>Learn More <ArrowRight className="ml-2 h-4 w-4" /></Link>
                                 </Button>
                             </CardFooter>
                         </Card>
@@ -229,7 +230,7 @@ export default function Home() {
                 </div>
                  <div className="text-center mt-12">
                     <Button asChild size="lg" variant="link" className="text-accent text-base">
-                        <Link href="/programs">View All Skill Development Courses <ArrowRight className="ml-2 h-4 w-4" /></Link>
+                        <Link href="/programs/general">View All Skill Development Courses <ArrowRight className="ml-2 h-4 w-4" /></Link>
                     </Button>
                 </div>
             </div>
@@ -280,7 +281,7 @@ export default function Home() {
                 <div className="rounded-lg bg-accent p-8 text-center text-accent-foreground md:p-12 max-w-4xl mx-auto">
                     <h2 className="text-3xl font-bold font-headline tracking-tighter sm:text-4xl">Ready to Achieve Your Career Goals?</h2>
                     <p className="mt-4 max-w-xl mx-auto text-accent-foreground/90">
-                        Enroll in one of our online courses with certification today and take the first step towards significant career growth. Your future is waiting.
+                        Enroll in one of our <Link href="/programs" className="font-semibold underline">online courses with certification</Link> today and take the first step towards significant career growth. Your future is waiting.
                     </p>
                     <div className="mt-8">
                         <Button size="lg" variant="secondary" asChild>
