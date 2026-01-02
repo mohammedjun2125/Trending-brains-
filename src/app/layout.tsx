@@ -6,6 +6,7 @@ import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { WhatsAppButton } from "@/components/layout/WhatsAppButton";
 import { Inter, Poppins } from 'next/font/google';
+import { Analytics } from "@vercel/analytics/react";
 
 const inter = Inter({
   subsets: ['latin'],
@@ -100,6 +101,7 @@ export default function RootLayout({
         </div>
         <WhatsAppButton />
         <Toaster />
+        <Analytics />
       </body>
     </html>
   );
