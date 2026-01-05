@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   title: "Online Skill Development & Career Training | Trending Brains Academy",
   description: "Learn job-ready skills, earn certifications, and grow your career with online skill development, women empowerment & entrepreneurship programs.",
   icons: {
-    icon: "/icon.png",
+    icon: "/tb-favicon.ico",
     shortcut: "/tb-favicon.ico",
   },
   metadataBase: new URL("https://www.trendingbrains.com"), // Use www domain
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Online Skill Development & Career Training | Trending Brains Academy",
-    description: "Learn job-ready skills, earn certifications, and grow your career with our practical online courses.",
+    description: "Learn job-ready-skills, earn certifications, and grow your career with our practical online courses.",
     images: ['https://www.trendingbrains.com/og-image.png'],
   },
   alternates: {
