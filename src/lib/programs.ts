@@ -54,7 +54,7 @@ export const programs: Program[] = [
     description: "A foundational women empowerment course to build essential digital and communication skills for career growth.",
     longDescription: "This women skill development program focuses on empowering women with fundamental skills for the modern world. It provides digital skills training to navigate the online landscape and enhances communication abilities for better personal and professional interactions. This online course comes with certification.",
     icon: BrainCircuit,
-    image: "/women-skill-development.jpg",
+    image: "/Women%20Skill%20Development%20Program.jpg",
     imageHint: "women learning",
     syllabus: [
       { week: "Module 1", topic: "Digital Literacy: Computer basics, internet, and online safety." },
@@ -75,7 +75,7 @@ export const programs: Program[] = [
     description: "Our vocational training programs in India help you master a practical skill and turn your passion into a profession.",
     longDescription: "Our vocational training courses allow women to choose a specific hands-on skill to develop. Each track provides expert training to help you master your craft, whether for personal enrichment or to start your own small business. Please note: You must choose one stream to specialize in. Certification is provided upon completion.",
     icon: Palette,
-    image: "/vocational-training.jpg",
+    image: "/Vocational%20Training%20Courses%20for%20Women.jpg",
     imageHint: "vocational skills",
     syllabus: [
         { week: "Track 1", topic: "Tailoring & Fashion Design" },
@@ -121,7 +121,7 @@ export const programs: Program[] = [
     description: "Master modern marketing by leveraging AI. This online course with certification covers SEO, social media, and paid ads.",
     longDescription: "Stay ahead with this comprehensive digital marketing course. You'll learn to use cutting-edge AI tools to enhance your strategy, create content, and analyze results. This is a job-ready skills program that includes a bonus training on resume building and career counselling for your career growth.",
     icon: BarChart,
-    image: "/digital-marketing-ai.jpg",
+    image: "/Digital%20Marketing%20&%20AI.jpg",
     imageHint: "marketing AI",
     syllabus: [
         { week: "Week 1-2", topic: "Digital Marketing Foundations & AI Essentials" },
