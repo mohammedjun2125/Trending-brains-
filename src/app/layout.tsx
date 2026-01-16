@@ -26,9 +26,14 @@ export const metadata: Metadata = {
   title: "Online Skill Development & Career Training | Trending Brains Academy",
   description: "Learn job-ready skills, earn certifications, and grow your career with online skill development, women empowerment & entrepreneurship programs.",
   icons: {
-    icon: "/tb-favicon.ico",
-    shortcut: "/tb-favicon.ico",
+    icon: [
+        { url: '/favicon.ico', sizes: 'any' },
+        { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+        { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+    ],
+    apple: '/apple-touch-icon.png',
   },
+  manifest: "/site.webmanifest",
   metadataBase: new URL("https://www.trendingbrains.com"), // Use www domain
   openGraph: {
     title: "Online Skill Development & Career Training | Trending Brains Academy",
@@ -55,7 +60,6 @@ export const metadata: Metadata = {
   alternates: {
     canonical: '/',
   },
-  manifest: "/manifest.json",
   keywords: [
     "online skill development courses",
     "skill development courses",
@@ -75,7 +79,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#F44336", // Corresponds to your accent color
+  themeColor: "#F04148", // Accent Red
   colorScheme: "light dark",
   width: "device-width",
   initialScale: 1,
@@ -124,6 +128,7 @@ export default function RootLayout({
     <html lang="en" className={`${inter.variable} ${poppins.variable}`} suppressHydrationWarning>
       <head>
         <meta name="google-site-verification" content="google4272a75c1f5aca66" />
+        <meta name="msapplication-config" content="/browserconfig.xml" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
