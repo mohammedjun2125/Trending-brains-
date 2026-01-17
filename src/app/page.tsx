@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useState, useEffect, useRef } from "react";
@@ -60,6 +59,15 @@ const whyChooseUs = [
 export default function Home() {
   const isMobile = useIsMobile();
   const heroImage = placeholderImages.placeholderImages.find(p => p.id === "hero-image");
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.play().catch(error => {
+        console.error("Video autoplay was blocked:", error);
+      });
+    }
+  }, []);
 
   return (
     <div className="flex flex-col min-h-[100dvh]">
@@ -68,6 +76,7 @@ export default function Home() {
         <section className="relative w-full h-[60vh] md:h-[70vh] lg:h-[80vh] overflow-hidden flex items-center justify-center">
           
            <video
+              ref={videoRef}
               className="absolute top-0 left-0 w-full h-full object-cover -z-10 brightness-50"
               autoPlay
               loop
